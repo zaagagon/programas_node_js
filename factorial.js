@@ -13,4 +13,14 @@ function factorial(n){
     }
 }
 
-console.log('El resultado de la operacion es : '+ factorial(4));
+console.log('El resultado de la operacion es : '+ factorial(5));
+
+//funcion recursiva factorial
+function factorialR(n){
+    if(n==0){
+        return 1
+    } else {
+        return factorialR(n-1)*n
+    }
+}
+console.log(factorialR(6));
