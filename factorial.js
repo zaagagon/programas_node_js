@@ -5,10 +5,12 @@ function factorial(n){
     var a =1;
 
     for( i=1;i<=n;i++){
-       var  a=a*i;
-       
-return a;
+       console.log( a +'*'+ i );
+       //imprimir variable
+       var  a=a*i;       
+       console.log(a);
+    //return a;
+    }
 }
-}
-console.log('dfadj'+ a);
-factorial(4);
+
+console.log('El resultado de la operacion es : '+ factorial(4));
