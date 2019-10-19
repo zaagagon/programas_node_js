@@ -1,0 +1,18 @@
+<input type="text" id="a" />
+<input type="text" id="b" />
+<button id="operar">
+    Sumar
+</button>
+<script>
+function Sumar(a, b, callback){
+    return callback(a+b);
+}
+
+document.querySelector("#operar").addEventListener('click', function(){
+    var a = parseInt(document.querySelector("#a").value),
+        b = parseInt(document.querySelector("#b").value);
+
+    Sumar(a, b, function(r){
+        console.log('El resultado es ' + r);
+    })
+}) </script>

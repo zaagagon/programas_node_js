@@ -13,3 +13,17 @@ function callback(){
 hagoAlgo(function(){
     console.log('Hola Zaagagon !!');
 })
+
+function hagoAlgo(callback) {
+    callback(' -- El mundo de Zag --');
+}
+
+hagoAlgo(function(a){
+    console.log(a);
+})
+
+<input type="text" id="a" />
+<input type="text" id="b" />
+<button id="operar">
+    Sumar
+</button>
