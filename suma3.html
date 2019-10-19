@@ -1,3 +1,4 @@
+<!-- agregar operaciones de calculadora -->
 <html>
 <body>
     
@@ -12,7 +13,7 @@
         <input type="text" name="num2" id="num2" />
         <br />
  
-        <p id="resultado">Suma: </p>
+        <p id="resultado">Suma: El resultado es ... </p>
  
         <button type="button" onclick='
             var casilla1=document.getElementById("num1");
@@ -20,7 +21,7 @@
             var casilla2=document.getElementById("num2");
             var n2 = casilla2.value;
             var resultado=document.getElementById("resultado");
-            resultado.innerHTML = "Suma: " +(parseInt(n1)+parseInt(n2));
+            resultado.innerHTML = "Suma: " +(parseInt(n1)*parseInt(n2));
             resultado.style.color = "blue";
             '>Calcular suma</button>
  
