@@ -22,8 +22,3 @@ hagoAlgo(function(a){
     console.log(a);
 })
 
-<input type="text" id="a" />
-<input type="text" id="b" />
-<button id="operar">
-    Sumar
-</button>

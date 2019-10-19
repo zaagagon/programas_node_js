@@ -7,3 +7,5 @@ Archivo creado zag, hola mundo!
 revisar instalacion de forever
 $ npm install forever
 $ forever start server.js
+
+//archivo gitignore creado
