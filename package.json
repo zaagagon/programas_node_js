@@ -1,0 +1,22 @@
+{
+  "name": "programas_nodejs",
+  "version": "1.0.0",
+  "description": "ejemplos de programas en node",
+  "main": "callback.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaagagon/programas_node_js.git"
+  },
+  "author": "zaagagon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zaagagon/programas_node_js/issues"
+  },
+  "homepage": "https://github.com/zaagagon/programas_node_js#readme",
+  "dependencies": {
+    "daemon": "^1.1.0"
+  }
+}
