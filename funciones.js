@@ -3,7 +3,8 @@ archivo: ejemplos de funciones
 author : @zag
 */
 
-
+//actualizado desde la nube usando el comando git pull
+//actualizado desde el repostorio local con git push
 //sintaxis de una funcion 
 
 /*function nombre_funcion(parametros){
