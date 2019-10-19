@@ -2,6 +2,7 @@
 console.log("hola error");
 var a=2,b=2, c;
 
+//funcion suma 
 function suma(a,b){
    return  a + b;
     //return c;
