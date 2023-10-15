@@ -1,5 +1,6 @@
 //importamos el modudlo
 const express=require('express')
+const path=require('path')
 
 //creamos el objeto
 const app2= express()
@@ -15,7 +16,8 @@ app2.get('/',function(req,res){
 
     //objeto res y metodo sendFile
     //metodo que recibe string es la ruta absoluta del archivo
-    res.sendFile("/Volumes/kevin/1/programas_node_js/suma2.html")
+    //res.sendFile("/Volumes/kevin/1/programas_node_js/suma2.html")
+res.sendFile(path.join(__dirname + "/suma2.html"))
 }
 //res.send("hola user")
 )
