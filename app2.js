@@ -11,12 +11,15 @@ const app2= express()
 app2.get('/',function(req,res){
 //usamos el metodo send
 //usemos h1 dentro de send enviando por send
-    res.send('<h1>Hola user</h1>')
+    //res.send('<h1>Hola user</h1>')
+
+    //objeto res y metodo sendFile
+    //metodo que recibe string es la ruta absoluta del archivo
+    res.sendFile("/Volumes/kevin/1/programas_node_js/suma2.html")
 }
 //res.send("hola user")
-
-
 )
+
 
 //puerto del servidor
 //usamos el metodo listen
