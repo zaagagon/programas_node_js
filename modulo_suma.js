@@ -1,7 +1,8 @@
 //creamos la funcion
 
-function suma(a,b){
+module.exports =function sumita( a, b){
+
+    
     return a +b
 }
 
-module.exports =suma()

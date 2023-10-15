@@ -10,3 +10,9 @@ console.log(process.argv);
 
 //tomar el nombre por consola
 console.log("Hola " +process.argv[2]);
+
+
+//importar modulo suma
+const suma=require('./modulo_suma.js')
+
+console.log("resultado suma .." + suma(8,9));
