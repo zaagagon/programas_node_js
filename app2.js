@@ -4,9 +4,14 @@ const express=require('express')
 //creamos el objeto
 const app2= express()
 
-app2.get('/',function(req,res){
+//usamos la funcion get con la ruta principal
+//usamos la funcion con los parametros requerimiento y respuesta
 
-    res.send("hola user")
+
+app2.get('/',function(req,res){
+//usamos el metodo send
+//usemos h1 dentro de send enviando por send
+    res.send('<h1>Hola user</h1>')
 }
 //res.send("hola user")
 
