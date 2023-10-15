@@ -13,6 +13,9 @@ console.log("Hola " +process.argv[2]);
 
 
 //importar modulo suma
-const suma=require('./modulo_suma.js')
+const {suma,multiplicar}=require('./modulo_suma.js')
+//importar multiplicar
+//
 
-console.log("resultado suma .." + suma(8,9));
+console.log("resultado suma .." + suma(10,4));
+console.log("probando operacion" + multiplicar(9,5));
