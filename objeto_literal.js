@@ -1,4 +1,6 @@
 //importamos chalk
+
+//const format = chalk()
 //objeto literal
 //clave ; valor
 
@@ -10,7 +12,8 @@ let user = {
     name : "capitan roger",
     nickname : "capitan america"
 }
-
+const chalk = require('chalk');
 //mostrar datos de objeto
-console.log(blue,"prueba");
+//console.log(chalk.blue('prueba'));
+console.log(chalk.blue('¡Hola mundo!'))
 console.log(user.name);
