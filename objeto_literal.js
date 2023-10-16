@@ -1,3 +1,4 @@
+//importamos chalk
 //objeto literal
 //clave ; valor
 
@@ -9,3 +10,7 @@ let user = {
     name : "capitan roger",
     nickname : "capitan america"
 }
+
+//mostrar datos de objeto
+console.log(blue,"prueba");
+console.log(user.name);
