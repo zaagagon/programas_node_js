@@ -8,13 +8,14 @@
 
 const express =require('express')
 const app = express()
+const userRouters= require('./app/routers/user')
+//usamos las rutas exportadas desde este archivo
+app.use(userRouters)
 
-//sin ruta
-
-app.get("/", function (req, res) {
+/*app.get("/", function (req, res) {
     res.send("Hola Mundo de nuevo con nodemon!");
    // res.send(alert("servidor en construcción"))
-  });
+  });*/
 
   //ejecución script app
   //node --watch app.js ya fue instalado express como dependencia
