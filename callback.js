@@ -1,3 +1,6 @@
+//importar exportar chalk
+const chalk = require('chalk')
+
 //ejemplo de un callback
 function callback(){
     return 'este es un ejemplo';
@@ -11,7 +14,8 @@ function callback(){
 }
 
 hagoAlgo(function(){
-    console.log('Hola Zaagagon !!');
+    console.log(chalk.red('Hola Zaagagon !!'));
+    //funcionó chalk red
 })
 
 function hagoAlgo(callback) {
