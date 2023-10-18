@@ -1,5 +1,7 @@
 
-
+//cambios realizados en package json
+//start:nodemon app.js
+//ejecuto : npm start -- para nodemon en watching
 //servidor express
 
 const express =require('express')
@@ -8,7 +10,7 @@ const app = express()
 //sin ruta
 
 app.get("/", function (req, res) {
-    res.send("Hola Mundo de nuevo !");
+    res.send("Hola Mundo de nuevo con nodemon!");
    // res.send(alert("servidor en construcción"))
   });
 
