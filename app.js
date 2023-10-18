@@ -9,8 +9,11 @@
 const express =require('express')
 const app = express()
 const userRouters= require('./app/routers/user')
+const clientesRouters= require('./app/routers/clientes')
+
 //usamos las rutas exportadas desde este archivo
 app.use(userRouters)
+app.use(clientesRouters)
 
 /*app.get("/", function (req, res) {
     res.send("Hola Mundo de nuevo con nodemon!");
