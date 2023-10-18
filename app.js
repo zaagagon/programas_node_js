@@ -2,6 +2,8 @@
 //cambios realizados en package json
 //start:nodemon app.js
 //ejecuto : npm start -- para nodemon en watching
+//revisart luego npm start que abre callback
+//npm run start
 //servidor express
 
 const express =require('express')
@@ -22,7 +24,7 @@ app.get("/", function (req, res) {
 //servidor escuchando 
 app.listen(3003)
 //mensaje por consola
-console.log("servidor ok");
+console.log("servidor ok con nodemon");
 
 //alert("servidor en construcción")
 /*var express = require("express");

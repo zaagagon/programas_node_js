@@ -1,0 +1,3 @@
+exports.getData=(req,res)=>{
+
+}
