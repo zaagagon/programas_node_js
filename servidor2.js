@@ -11,9 +11,9 @@ const app= express()
 
 //ruta 2
 
-app.post('/users', (req, res) => {
-    res.send("Recibimos un POST a /users");
-  })
+//app.post('/users', (req, res) => {
+  //  res.send("Recibimos un POST a /users");
+  //})
 
 //definir ruta + controlador = home
 
@@ -22,7 +22,7 @@ app.get('/home',(req,res)=>{
     
 }
 )
-app.get('/delicias',(req,res)=>{
+app.get('/',(req,res)=>{
     res.send('<h1>Inicio en construcción<h1>');
     
 }
