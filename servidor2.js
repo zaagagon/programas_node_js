@@ -9,6 +9,11 @@ const port=3001
 
 const app= express()
 
+//ruta 2
+app.post('/users', (req, res) => {
+    res.send("Recibimos un POST a /users");
+  })
+
 //definir ruta + controlador = home
 
 app.get('/home',(req,res)=>{
@@ -17,10 +22,15 @@ app.get('/home',(req,res)=>{
 }
 )
 
-//ruta 2
-app.post('/users', (req, res) => {
-    res.send("Recibimos un POST a /users");
-  })
+//ruta 3
+app.get('contacto',()=>{
+    //handler
+    
+}
+
+)
+
+
 
 
 
