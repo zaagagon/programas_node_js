@@ -17,6 +17,11 @@ app.get('/home',(req,res)=>{
 }
 )
 
+//ruta 2
+app.post('/users', (req, res) => {
+    res.send("Recibimos un POST a /users");
+  })
+
 
 
 //puerto escucha
