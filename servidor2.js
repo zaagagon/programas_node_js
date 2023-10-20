@@ -1,6 +1,7 @@
 //servidor con ruta hello
 
 //llamamos express
+//importamos express desde node_modules
 
 const express = require('express')
 //tomamos el puerto
