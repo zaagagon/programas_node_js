@@ -6,10 +6,11 @@ const express = require('express')
 //tomamos el puerto
 
 const port=3001
-
+//creamos el objeto o instancia de express
 const app= express()
 
 //ruta 2
+
 app.post('/users', (req, res) => {
     res.send("Recibimos un POST a /users");
   })
