@@ -18,14 +18,21 @@ app.post('/users', (req, res) => {
 
 app.get('/home',(req,res)=>{
     res.send('<h1>Inicio en construcción<h1>');
-
+    
+}
+)
+app.get('/delicias',(req,res)=>{
+    res.send('<h1>Inicio en construcción<h1>');
+    
 }
 )
 
 //ruta 3
-app.get('contacto',()=>{
+app.get('/contacto',(req,res)=>{
     //handler
+    res.send('<h1 >Contacto en construcción<h1>');
     
+
 }
 
 )
