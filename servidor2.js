@@ -5,11 +5,19 @@
 const express = require('express')
 //tomamos el puerto
 
-const port=3000
+const port=3001
 
 const app= express()
 
-//definir ruta
+//definir ruta + controlador = home
+
+app.get('/home',(req,res)=>{
+    res.send('<h1>Inicio en construcción<h1>');
+
+}
+)
+
+
 
 //puerto escucha
 
