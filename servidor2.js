@@ -6,7 +6,7 @@
 const express = require('express')
 //tomamos el puerto
 
-const port=3001
+const port=3004
 //creamos el objeto o instancia de express
 const app= express()
 
@@ -40,7 +40,9 @@ app.get('/contacto',(req,res)=>{
 )
 
 
-
+app.get('/about', function (req, res) {
+    res.send('about');
+  });
 
 
 //puerto escucha
