@@ -5,5 +5,10 @@ const express =require('express')
 
 const app = express()
 
-app.listen(3008)
-console.log("servidor 2 escuchando ");
+//puerto del servidor
+const puerto=3008
+
+app.listen(puerto)
+console.log("servidor 2 escuchando " + puerto);
+//cadena con variable puerto
+console.log("servidor 2 escuchando ",`${puerto}`);
