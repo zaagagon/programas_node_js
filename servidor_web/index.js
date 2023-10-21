@@ -4,5 +4,7 @@ const express = require('express')
 //creamos objeto o instancia de express
 const app = express()
 
-app.listen(3000)
-console.log('servidor web en puerto 3000');
+app.use(express.static(__dirname+'/public'))
+
+app.listen(3005)
+console.log('servidor web en puerto ');
