@@ -7,6 +7,8 @@ const app = express()
 
 //puerto del servidor
 const puerto=3008
+//archivos estaticos
+app.use(express.static(__dirname + '/public/'))
 
 //ruta /
 app.get('/',(req,res)=>{
