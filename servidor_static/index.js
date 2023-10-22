@@ -5,5 +5,8 @@
 
 //npm i express -- instala node_modules
 
+const express = require('express')
+const app = express()
 
-console.log("servidor estatico construcción");
+app.listen(3002)
+console.log(`servidor estatico construcción en ${3002}`);
