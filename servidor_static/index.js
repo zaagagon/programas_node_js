@@ -34,6 +34,12 @@ app.get('/nosotros',(req,res)=>{
     res.send("inicio nosotros")
 
 })
+//contacto
+app.get('/contacto',(req,res)=>{
+    //controlador o handler
+    res.send('<h1>Pagina contacto</h1>')
+
+})
 
 
 app.listen(port)
