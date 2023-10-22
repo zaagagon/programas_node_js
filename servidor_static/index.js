@@ -14,6 +14,14 @@ app.get('/',(req,res)=>{
         root:__dirname
     })
 })
+//ruta inicio
+app.get('/inicio',(req,res)=>{
+    //controlador o handler
+    res.send("inicio construcción")
+
+})
+
+
 
 app.listen(3003)
 console.log(`servidor estatico construcción en ${3002}`);
