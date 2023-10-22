@@ -8,5 +8,12 @@
 const express = require('express')
 const app = express()
 
-app.listen(3002)
+//ruta estatica
+app.get('/',(req,res)=>{
+    res.sendFile('./static/index.html',{
+        root:__dirname
+    })
+})
+
+app.listen(3003)
 console.log(`servidor estatico construcción en ${3002}`);
