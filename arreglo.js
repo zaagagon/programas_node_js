@@ -14,3 +14,6 @@ console.log(numeros[0]);
 console.log(chalk.red(numeros));
 console.log("prueba cursos multiples");
 console.log("prueba cursos multiples");
+//funcion flecha suma
+var suma= (a,b)=>a+b
+console.log("resultado suma",suma(2,5));
