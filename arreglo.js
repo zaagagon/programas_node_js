@@ -11,4 +11,6 @@ console.log(numeros[0]);
 
 //metodos con arreglos 
 //format color de salida
-console.log(chalk.red(numeros.length));
+console.log(chalk.red(numeros));
+console.log("prueba cursos multiples");
+console.log("prueba cursos multiples");
