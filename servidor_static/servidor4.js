@@ -5,3 +5,7 @@ const app = express()
 
 const port = 4001
 
+//escuchar puerto
+
+app.listen(port,()=>console.log("hola"))
+
