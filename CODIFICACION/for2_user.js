@@ -9,7 +9,7 @@ const entrada = readline.createInterface({
   output: process.stdout
 });
 
-entrada.question("Ingrese la cantidad de veces que desea mostrar 'Hola': ", (cantidadVeces) => {
+entrada.question("Ingrese la cantidad de veces que desea mostrar 'Hola Developers': ", (cantidadVeces) => {
   const veces = parseInt(cantidadVeces);
 
   if (!isNaN(veces)) {
