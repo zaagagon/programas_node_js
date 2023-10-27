@@ -2,7 +2,7 @@
 express =require('express')
 
 const app = express()
-
+//variable de entorno
 const port = 4003
 
 //ruta y handler
