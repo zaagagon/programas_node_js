@@ -4,7 +4,7 @@ console.log(`Hola como estas ${nombre}`);
 
 
 // usemos variable de entorno NOMBRE
-const lastname = process.env.NOMBRE;
+const lastname = process.env.lastname;
 
 // estructura condicional
 if (lastname) {
