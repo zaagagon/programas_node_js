@@ -9,6 +9,8 @@ console.log("tamaño del arreglo :" +numeros.length);
 
 //sumemos los elementos del arreglo
 //funcion flecha
-numeros.reduce((acumulador,numero)=>{
+const sumita=numeros.reduce((acumulador,numero)=>{
     return acumulador + numero
 },0)
+//mostramos sumita
+console.log(`resultado de suma de elementos ${sumita}`);
