@@ -1,0 +1,24 @@
+[
+  {
+    "nombre": "dfsdf",
+    "cedula": "sdfs",
+    "fechaNacimiento": "dsf",
+    "correo": "sdfs",
+    "ciudadResidencia": "sdf",
+    "ciudadOrigen": "sdf",
+    "cancionesFavoritas": [
+      {
+        "artista": "sdf",
+        "titulo": "dsf"
+      },
+      {
+        "artista": "dsf",
+        "titulo": "sdfsd"
+      },
+      {
+        "artista": "",
+        "titulo": "df"
+      }
+    ]
+  }
+]
