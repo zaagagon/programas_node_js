@@ -3,12 +3,10 @@ const nombre = "Yolis"
 console.log(`Hola como estas ${nombre}`);
 
 
-// usemos variable de entorno NOMBRE
-const lastname = process.env.lastname;
+const nick = process.argv[2]; // El primer argumento es process.argv[2]
 
-// estructura condicional
-if (lastname) {
-    console.log(`Hola, ${lastname}!`);
+if (nick) {
+    console.log(`Hola, ${nick}!`);
 } else {
-    console.log("No se proporcionó un nombre en la variable de entorno NOMBRE.");
+    console.log("Por favor, ingresa tu nick como argumento.");
 }
