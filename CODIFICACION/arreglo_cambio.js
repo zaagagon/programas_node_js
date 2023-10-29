@@ -1,12 +1,15 @@
 const colores=["azul","amarillo","verde"]
 
 console.log("prueba");
-for(i=0; i<colores.length;i++){
+for(let i=0; i<colores.length;i++){
     
-   
-    console.log(colores[i]);
-    
+    setTimeout(() => {
+        console.log(colores[i]);
+    }, 2000);
     
 }
-console.log(colores.length);
+setTimeout(() => {
+    
+    console.log("tamaño de arreglo ;"+colores.length);
+}, 3000);
 console.log(colores[2]);
