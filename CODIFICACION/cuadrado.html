@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de Área y Perímetro de Cuadrado</title>
+</head>
+<body>
+  <h1>Calculadora de Área y Perímetro de Cuadrado</h1>
+
+  <label for="lado">Longitud del lado:</label>
+  <input type="number" id="lado" placeholder="Ingrese la longitud del lado">
+  <button onclick="calcular()">Calcular</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function calcular() {
+      // Obtener el valor del lado ingresado por el usuario
+      const lado = parseFloat(document.getElementById("lado").value);
+
+      // Validar que el valor sea un número válido
+      if (isNaN(lado)) {
+        document.getElementById("resultado").innerHTML = "Por favor, ingrese un número válido.";
+      } else {
+        // Calcular el área y el perímetro
+        const area = lado * lado;
+        const perimetro = 4 * lado;
+
+        // Mostrar los resultados
+        document.getElementById("resultado").innerHTML = `Área del cuadrado: ${area}, Perímetro del cuadrado: ${perimetro}`;
+      }
+    }
+  </script>
+</body>
+</html>
