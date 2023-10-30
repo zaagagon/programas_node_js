@@ -11,6 +11,7 @@ rl.question('Por favor, ingresa tu nombre: ', (nombre) => {
   rl.question('Ahora, ingresa tu apellido: ', (apellido) => {
     console.log(`Nombre: ${nombre}`);
     console.log(`Apellido: ${apellido}`);
+    console.log(`tu nombre completo es : ${nombre} ${apellido}`);
     rl.close();
   });
 });
