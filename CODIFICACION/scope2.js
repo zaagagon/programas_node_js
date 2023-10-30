@@ -7,15 +7,15 @@ let globalVar = "Soy yo variable global";
 function pruebaScope() {
   // Variable con ámbito local
   let localVar = "Soy yo variable local";
-// Accesible: Imprimirá "Soy global"
+// *****
   console.log(globalVar); 
-  // Accesible: Imprimirá "Soy local"
+  // *****
   console.log(localVar);  
 }
 
 //llamado de la funcion
 pruebaScope();
 
-console.log(globalVar); // Accesible: Imprimirá "Soy global"
-console.log(localVar);  // No accesible: Generará un error, localVar no está definida aquí
+console.log(globalVar); 
+console.log(localVar);  
  // cual es la salida?
