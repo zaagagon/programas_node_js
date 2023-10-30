@@ -1,13 +1,14 @@
-// Ingresar la longitud del lado del cuadrado
-//ladoxlado
-const lado = parseFloat(prompt("Ingresar longitud del lado del cuadrado :"));
+// Obtén el valor del lado del cuadrado desde process.argv
+const lado = process.argv[2];
 
-// Calcular el área
-const area = lado * lado;
+// Convierte el valor del lado a un número
+const ladoNumero = parseFloat(lado);
 
-// Calcular el perímetro
-const perimetro = 4 * lado;
-
-// Mostrar los resultados
-console.log(`Área del cuadrado: ${area}`);
-console.log(`Perímetro del cuadrado: ${perimetro}`);
+// Verifica si el valor es un número válido
+if (!isNaN(ladoNumero)) {
+  // Calcula el área del cuadrado
+  const area = ladoNumero * ladoNumero;
+  console.log(`El área del cuadrado con lado ${ladoNumero} es: ${area}`);
+} else {
+  console.log('Por favor, ingrese un número válido como lado del cuadrado.');
+}
