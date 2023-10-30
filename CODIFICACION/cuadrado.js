@@ -5,6 +5,7 @@ const lado = process.argv[2];
 const ladoNumero = parseFloat(lado);
 
 // Verifica si el valor es un número válido
+//La función isNaN (Is Not-a-Number) 
 if (!isNaN(ladoNumero)) {
   // Calcula el área del cuadrado
   const area = ladoNumero * ladoNumero;
