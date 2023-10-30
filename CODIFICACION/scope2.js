@@ -18,3 +18,4 @@ pruebaScope();
 
 console.log(globalVar); // Accesible: Imprimirá "Soy global"
 console.log(localVar);  // No accesible: Generará un error, localVar no está definida aquí
+ // cual es la salida?
