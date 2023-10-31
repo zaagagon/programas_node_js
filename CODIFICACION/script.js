@@ -1,0 +1,1 @@
+alert("No ingreses información con extraños")
