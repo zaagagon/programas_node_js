@@ -10,8 +10,12 @@ console.log(process.argv[3]);
 console.log("tamaño arreglo :" +argumentos.length);
 //recorremos el arreglo
 
-for (let index = 0; index < argumentos.length; index++) {
-    //const element = argumentos[index];
-    console.log(argumentos[index]);
+for (let i = 0; i < argumentos.length; i++) {
+   /* const element = argumentos[i];
+    console.log("desde for :" +element);
+    console.log(`Elemento ${i}: ${element}`);
+    console.log("sin funciona "+ argumentos[i]);*/
+    console.log("for ok : "+ argumentos[i]);
+    
 }
 console.log("desde el arreglo :" +argumentos[3]);
