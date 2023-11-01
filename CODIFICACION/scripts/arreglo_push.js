@@ -16,11 +16,14 @@ for (let i = 0; i < frutas.length; i++) {
 }
 frutas.unshift("piña")
 function iterate(arreglo) {
+    console.log(`Contenido arreglo ${arreglo}`);
     for (let i = 0; i < arreglo.length; i++) {
         const element = arreglo[i];
         console.log(element);
         
-    }
-    
+    }   
 }
+
+//llamado funcion iterate con frutas
+iterate(frutas)
 
