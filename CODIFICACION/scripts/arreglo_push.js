@@ -15,4 +15,12 @@ for (let i = 0; i < frutas.length; i++) {
     
 }
 frutas.unshift("piña")
+function iterate(arreglo) {
+    for (let i = 0; i < arreglo.length; i++) {
+        const element = arreglo[i];
+        console.log(element);
+        
+    }
+    
+}
 
