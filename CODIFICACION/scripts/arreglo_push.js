@@ -16,6 +16,7 @@ for (let i = 0; i < frutas.length; i++) {
 }
 frutas.unshift("piña")
 function iterate(arreglo) {
+
     console.log(`Contenido arreglo ${arreglo}`);
     for (let i = 0; i < arreglo.length; i++) {
         const element = arreglo[i];
@@ -27,3 +28,6 @@ function iterate(arreglo) {
 //llamado funcion iterate con frutas
 iterate(frutas)
 
+const eliminada=frutas.shift
+console.log("fruta borrada " +  eliminada);
+iterate(frutas)
