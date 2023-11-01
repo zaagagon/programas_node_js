@@ -28,6 +28,8 @@ function iterate(arreglo) {
 //llamado funcion iterate con frutas
 iterate(frutas)
 
-const eliminada=frutas.shift
+const eliminada=frutas.shift()
 console.log("fruta borrada " +  eliminada);
 iterate(frutas)
+
+//pendiente menu metodos
