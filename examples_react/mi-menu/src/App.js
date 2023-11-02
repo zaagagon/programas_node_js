@@ -7,8 +7,8 @@ import {
 } from 'react-router-dom';
 
 // Componentes de páginas
-import Inicio from './Inicio';
-import Acerca from './Acerca';
+import Inicio from './components/Inicio';
+import Acerca from './components/Acerca';
 
 function App() {
   return (
