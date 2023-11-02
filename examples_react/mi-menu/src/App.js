@@ -1,28 +1,19 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-} from 'react-router-dom';
-
-// Componentes de páginas
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Inicio from './components/Inicio';
 import Acerca from './components/Acerca';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+// Importamos los estilos de Bootstrap
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className="container mt-4">
         <nav>
-          <ul>
-            <li>
-              <Link to="/">Inicio</Link>
-            </li>
-            <li>
-              <Link to="/acerca">Acerca</Link>
-            </li>
-          </ul>
+          <Link to="/" className="btn btn-primary me-2">Inicio</Link>
+          <Link to="/acerca" className="btn btn-secondary">Acerca</Link>
         </nav>
 
         <Routes>
