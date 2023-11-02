@@ -1,21 +1,21 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Route,
+  Routes,  // Importamos Routes en lugar de Route
+  Route,   // Importamos Route para definir rutas individuales
 } from 'react-router-dom';
-import Home from './components/Home';  // Importa el componente Home desde su archivo
-import Pagina from './components/Pagina';  // Importa el componente Pagina desde su archivo
+import Home from './components/Home';
+import Pagina from './components/Pagina';
 
 function App() {
   return (
     <Router>
-      <Route path="/" exact component={Home} />
-      <Route path="/pagina" component={Pagina} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/pagina" element={<Pagina />} />
+      </Routes>
     </Router>
   );
 }
-
-//export default App;
-
 
 export default App;
