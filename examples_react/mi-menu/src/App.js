@@ -1,13 +1,32 @@
-import React from 'react';
+// Importa las bibliotecas necesarias
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Inicio from './components/Inicio';
+import Inicio from './components/-Inicio';
 import Acerca from './components/Acerca';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import 'bootstrap/dist/css/bootstrap.min.css'; 
-// Importamos los estilos de Bootstrap
-
 function App() {
+  // Define un estado para almacenar los datos obtenidos
+  const [datos, setDatos] = useState([]);
+
+  // Función para cargar datos desde el servidor
+  const cargarDatos = async () => {
+    try {
+      const response = await fetch('/api/obtener-datos'); // Reemplaza con tu ruta de API
+      if (response.ok) {
+        const datos = await response.json();
+        setDatos(datos);
+      }
+    } catch (error) {
+      //console.error('Error al cargar datos:', error);
+    }
+  };
+
+  useEffect(() => {
+    // Llama a la función para cargar datos cuando el componente se monta
+    cargarDatos();
+  }, []);
+
   return (
     <Router>
       <div className="container mt-4">
@@ -17,8 +36,9 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/acerca" element={<Acerca />} />
+        <Route path="/api/obtener-datos" element={<Inicio datos={datos} />} />
+          <Route path="/" element={<Inicio datos={datos} />} />
+          <Route path="/acerca" element={<Acerca datos={datos} />} />
         </Routes>
       </div>
     </Router>
