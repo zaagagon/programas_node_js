@@ -25,7 +25,7 @@ function Inicio2() {
 
   return (
     <div>
-      <h1>Usuarios</h1>
+      <h1>Usuarios desde ruta API</h1>
       <ul>
         {usuarios.map(usuario => (
           <li key={usuario.id}>

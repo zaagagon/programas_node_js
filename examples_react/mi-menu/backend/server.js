@@ -1,20 +1,22 @@
-const cors = require('cors');
-
-
 
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
-const port = 5010; // Puerto del servidor backend
+
+const cors = require('cors');
+
+const port = 5012; // Puerto del servidor backend
 // Habilitado CORS para permitir solicitudes
 // desde cualquier origen
 // Configura CORS para permitir solo un origen específico (en este ejemplo, http://localhost:3000)
-const corsOptions = {
+/*const corsOptions = {
     origin: 'http://localhost:5010/api/obtener-datos', // Reemplaza con el origen que deseas permitir
-  };
-  app.use(cors({ origin: 'http://localhost:5010' }));
-  app.use(cors(corsOptions));
-//app.use(cors());
+  //};
+  //app.use(cors({ origin: 'http://localhost:5010' }));
+  //app.use(cors(corsOptions));
+//app.use(cors());*/
+app.use(cors());
+app.use(express.json());
 
 // Configuración de la conexión a la base de datos MySQL
 const db = mysql.createConnection({
