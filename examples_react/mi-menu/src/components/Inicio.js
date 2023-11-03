@@ -5,7 +5,8 @@ function Inicio() {
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5012/api/obtener-datos') // Reemplaza con la URL correcta de tu servidor
+    // Reemplazar con la URL correcta de mi servidor
+    axios.get('http://localhost:5012/api/obtener-datos') 
       .then(response => {
         if (response.status === 200) {
           setUsuarios(response.data);
