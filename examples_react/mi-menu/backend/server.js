@@ -34,7 +34,7 @@ db.connect(err => {
 });
 
 // Ruta para obtener datos de la base de datos y responder con JSON
-app.get('/api/obtener-datos', (req, res) => {
+app.get('/datos', (req, res) => {
   // Realiza una consulta a la base de datos (ajusta la consulta según tus necesidades)
   db.query('SELECT * FROM usuarios', (err, results) => {
     if (err) {

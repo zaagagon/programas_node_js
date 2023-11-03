@@ -1,7 +1,8 @@
 // Importa las bibliotecas necesarias
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Inicio from './components/-Inicio';
+import Inicio2 from './components/Inicio2';
+import Inicio from './components/Inicio';
 import Acerca from './components/Acerca';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -36,8 +37,10 @@ function App() {
         </nav>
 
         <Routes>
-        <Route path="/api/obtener-datos" element={<Inicio datos={datos} />} />
-          <Route path="/" element={<Inicio datos={datos} />} />
+
+     
+        <Route path="/api/" element={<Inicio2 />} />
+          <Route path="/" element={<Inicio />} />
           <Route path="/acerca" element={<Acerca datos={datos} />} />
         </Routes>
       </div>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-function Inicio() {
+function Inicio2() {
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
     // Realizar una solicitud para obtener los datos de la tabla "usuarios"
     //fetch('/api/obtener-datos') 
-    fetch('http://localhost:5004/api/obtener-datos')
+    fetch('http://localhost:5004/api/')
     // Reemplaza con la ruta correcta de tu servidor
       .then(response => {
         if (!response.ok) {
@@ -37,4 +37,4 @@ function Inicio() {
   );
 }
 
-export default Inicio;
+export default Inicio2;
