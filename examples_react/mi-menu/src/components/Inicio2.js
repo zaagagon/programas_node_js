@@ -6,7 +6,7 @@ function Inicio2() {
   useEffect(() => {
     // Realizar una solicitud para obtener los datos de la tabla "usuarios"
     //fetch('/api/obtener-datos') 
-    fetch('http://localhost:5004/api/')
+    fetch('http://localhost:5012/api/obtener-datos')
     // Reemplaza con la ruta correcta de tu servidor
       .then(response => {
         if (!response.ok) {
