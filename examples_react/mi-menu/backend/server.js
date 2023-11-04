@@ -48,6 +48,21 @@ app.get('/api/obtener-datos', (req, res) => {
   });
 });
 
+//insertar
+
+app.post('/api/insertar-datos', (req, res) => {
+  const { nombre, edad, correo } = req.body; // Asumiendo que esperas recibir estos campos en el cuerpo de la solicitud POST
+
+  // Realiza una consulta para insertar datos en la base de datos
+  db.query('INSERT INTO usuarios (nombre, edad, correo) VALUES (?, ?, ?)', [nombre, edad, correo], (err, result) => {
+    if (err) {
+      res.status(500).json({ error: 'Error al insertar datos en la base de datos' });
+    } else {
+      res.status(200).json({ message: 'Datos insertados con éxito' });
+    }
+  });
+});
+
 // Iniciar el servidor
 app.listen(port, () => {
   console.log(`Servidor backend escuchando en el puerto ${port}`);
