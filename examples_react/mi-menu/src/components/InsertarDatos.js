@@ -8,7 +8,7 @@ function InsertarDatos() {
 
   const handleInsertarDatos = () => {
     // Realiza una solicitud POST para insertar datos en la base de datos
-    axios.post('/api/insertar-datos', { nombre, edad, correo })
+    axios.post('http://localhost:5013/api/insertar-datos', { nombre, edad, correo })
       .then((response) => {
         console.log(response.data);
         // Aquí puedes manejar la respuesta según tus necesidades
@@ -17,7 +17,6 @@ function InsertarDatos() {
         console.error(error);
       });
   };
-
   return (
     <div>
       <h2>Insertar Datos en la Base de Datos</h2>

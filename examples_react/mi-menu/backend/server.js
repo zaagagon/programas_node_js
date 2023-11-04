@@ -5,7 +5,7 @@ const app = express();
 
 const cors = require('cors');
 
-const port = 5012; // Puerto del servidor backend
+const port = 5013; // Puerto del servidor backend
 // Habilitado CORS para permitir solicitudes
 // desde cualquier origen
 // Configura CORS para permitir solo un origen específico (en este ejemplo, http://localhost:3000)
@@ -49,19 +49,6 @@ app.get('/api/obtener-datos', (req, res) => {
 });
 
 //insertar
-
-app.post('/api/insertar-datos', (req, res) => {
-  const { nombre, edad, correo } = req.body; // Asumiendo que esperas recibir estos campos en el cuerpo de la solicitud POST
-
-  // Realiza una consulta para insertar datos en la base de datos
-  db.query('INSERT INTO usuarios (nombre, edad, correo) VALUES (?, ?, ?)', [nombre, edad, correo], (err, result) => {
-    if (err) {
-      res.status(500).json({ error: 'Error al insertar datos en la base de datos' });
-    } else {
-      res.status(200).json({ message: 'Datos insertados con éxito' });
-    }
-  });
-});
 
 // Iniciar el servidor
 app.listen(port, () => {

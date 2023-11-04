@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Inicio2 from './components/Inicio2';
 import Inicio from './components/Inicio';
 import Acerca from './components/Acerca';
-import InsertarDatos from './components/InsertarDatos'; // Importa el componente de inserción
+// Importa el componente de inserción
+import InsertarDatos from './components/InsertarDatos'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
