@@ -22,6 +22,7 @@ function Inicio() {
   return (
     <div>
       <h1>Usuarios desde ruta inicio</h1>
+      <h1>base de dato prueba - mysql - react</h1>
       <table>
         <thead>
           <tr>
