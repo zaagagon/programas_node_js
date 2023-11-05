@@ -77,6 +77,24 @@ app.post('/api/insertar-datos', (req, res) => {
 
 // ...
 
+// Ruta para actualizar la información de un usuario
+app.put('/ruta/actualizar/:nombre', (req, res) => {
+  const nombre = req.params.nombre;
+
+  // Realiza la actualización en la base de datos
+  db.query(
+    'UPDATE usuarios SET apellido = ? WHERE nombre = ?',
+    ['ormaza', nombre],
+    (err, result) => {
+      if (err) {
+        res.status(500).json({ error: 'Error al actualizar la información' });
+      } else {
+        res.status(200).json({ message: 'Información actualizada correctamente' });
+      }
+    }
+  );
+});
+
 
 
 // Iniciar el servidor
