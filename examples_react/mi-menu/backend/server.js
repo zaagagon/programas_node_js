@@ -49,6 +49,35 @@ app.get('/api/obtener-datos', (req, res) => {
 });
 
 //insertar
+// ...
+
+// Ruta para insertar datos en la base de datos
+// Ruta para insertar datos en la base de datos
+app.post('/api/insertar-datos', (req, res) => {
+  const { nombre, apellido, correo, contrasena } = req.body;
+
+  if (!nombre || !apellido || !correo || !contrasena) {
+    res.status(400).json({ error: 'Por favor, proporciona nombre, apellido, correo y contraseña' });
+  } else {
+    // Realiza la inserción de datos en la base de datos
+    db.query(
+      'INSERT INTO usuarios (nombre, apellido, correo, contrasena) VALUES (?, ?, ?, ?)',
+      [nombre, apellido, correo, contrasena],
+      (err, result) => {
+        if (err) {
+          res.status(500).json({ error: 'Error al insertar datos en la base de datos' });
+        } else {
+          res.status(200).json({ message: 'Datos insertados correctamente' });
+        }
+      }
+    );
+  }
+});
+
+
+// ...
+
+
 
 // Iniciar el servidor
 app.listen(port, () => {
