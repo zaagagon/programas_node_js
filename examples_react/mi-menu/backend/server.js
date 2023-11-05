@@ -51,7 +51,7 @@ app.get('/api/obtener-datos', (req, res) => {
 //insertar
 // ...
 
-// Ruta para insertar datos en la base de datos
+
 // Ruta para insertar datos en la base de datos
 app.post('/api/insertar-datos', (req, res) => {
   const { nombre, apellido, correo, contrasena } = req.body;
