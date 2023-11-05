@@ -10,13 +10,19 @@ function InsertarDatos() {
     // Realiza una solicitud POST para insertar datos en la base de datos
     axios.post('http://localhost:5013/api/insertar-datos', { nombre, edad, correo })
       .then((response) => {
-        console.log(response.data);
-        // Aquí puedes manejar la respuesta según tus necesidades
+        // Mostrar una alerta con los datos ingresados
+        alert('Datos ingresados con éxito: ' + JSON.stringify(response.data));
+        // Limpia los campos de entrada
+        setNombre('');
+        setEdad('');
+        setCorreo('');
       })
       .catch((error) => {
-        console.error(error);
+        // Mostrar una alerta en caso de error
+        alert('Error al insertar datos: ' + error.message);
       });
   };
+
   return (
     <div>
       <h2>Insertar Datos en la Base de Datos</h2>
