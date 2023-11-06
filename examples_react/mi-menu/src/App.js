@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Inicio2 from './components/Inicio2';
 import Inicio from './components/Inicio';
 import Acerca from './components/Acerca';
+//ruta actualizar
+import ActualizarDatos from './components/ActualizarDatos'; // Importa el componente de actualización
+
 // Importa el componente de inserción
 import InsertarDatos from './components/InsertarDatos'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
