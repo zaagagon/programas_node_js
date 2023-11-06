@@ -36,6 +36,8 @@ function App() {
           <Link to="/" className="btn btn-primary me-2">Inicio</Link>
           <Link to="/acerca" className="btn btn-secondary me-2">Acerca</Link>
           <Link to="/insertar-datos" className="btn btn-success">Insertar Datos</Link> {/* Agrega un enlace para la inserción */}
+          <Link to="/actualizar-datos" className="btn btn-warning">Actualizar Datos</Link> {/* Agrega un enlace para la actualización */}
+
         </nav>
 
         <Routes>
@@ -43,6 +45,8 @@ function App() {
           <Route path="/" element={<Inicio />} />
           <Route path="/acerca" element={<Acerca datos={datos} />} />
           <Route path="/insertar-datos" element={<InsertarDatos />} /> {/* Agrega una nueva ruta para la inserción */}
+          <Route path="/actualizar-datos" element={<ActualizarDatos />} /> {/* Agrega una nueva ruta para la actualización */}
+
         </Routes>
       </div>
     </Router>
