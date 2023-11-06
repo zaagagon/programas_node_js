@@ -5,7 +5,7 @@ const app = express();
 
 const cors = require('cors');
 
-const port = 5013; // Puerto del servidor backend
+const port = 5014; // Puerto del servidor backend
 // Habilitado CORS para permitir solicitudes
 // desde cualquier origen
 // Configura CORS para permitir solo un origen específico (en este ejemplo, http://localhost:3000)
@@ -78,7 +78,7 @@ app.post('/api/insertar-datos', (req, res) => {
 // ...
 
 // Ruta para actualizar la información de un usuario
-app.put('/ruta/actualizar/:nombre', (req, res) => {
+app.put('/api/actualizar-datos', (req, res) => {
   const nombre = req.params.nombre;
 
   // Realiza la actualización en la base de datos
