@@ -17,7 +17,7 @@ function InsertarDatos() {
     };
 
     // Realiza una solicitud POST para insertar datos en la base de datos
-    axios.post('http://localhost:5013/api/insertar-datos', data)
+    axios.post('http://localhost:5014/api/insertar-datos', data)
       .then((response) => {
         // Mostrar una alerta con los datos ingresados
         alert('Datos ingresados con éxito: ' + JSON.stringify(response.data));

@@ -48,6 +48,29 @@ app.get('/api/obtener-datos', (req, res) => {
   });
 });
 
+
+//
+app.get('/api/buscar-datos/', (req, res) => {
+  const { nombre } = req.query; // Obtiene el nombre de los parámetros de la consulta
+
+  if (!nombre) {
+    res.status(400).json({ error: 'Debes proporcionar un nombre para la búsqueda' });
+    return;
+  }
+
+  // Realiza una consulta a la base de datos para buscar usuarios por nombre
+  db.query('SELECT * FROM usuarios WHERE nombre = ?', [nombre], (err, results) => {
+    if (err) {
+      res.status(500).json({ error: 'Error al obtener datos de la base de datos' });
+    } else {
+      res.setHeader('Content-Type', 'application/json'); // Devuelve los datos como respuesta JSON
+      res.json(results); // Devuelve los datos como respuesta JSON
+    }
+  });
+});
+
+
+//
 //insertar
 // ...
 

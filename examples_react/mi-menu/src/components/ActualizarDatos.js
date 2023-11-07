@@ -18,7 +18,7 @@ function ActualizarDatos() {
 
   const handleBuscarClick = async () => {
     try {
-      const response = await axios.get(`/api/obtener-datos/${nombre}`);
+      const response = await axios.get(`http://localhost:5014/api/buscar-datos/`);
 
       if (response.status === 200) {
         setRegistro(response.data); // Almacena el registro encontrado en el estado
