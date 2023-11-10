@@ -8,3 +8,6 @@ let num2 = parseInt(process.argv[3])
 let resultado =num1+num2
 
 console.log("resultado de la suma : " + resultado);
+
+//construir arreglos
+const arreglo1=["Iron man",5,4,"hulk"]
