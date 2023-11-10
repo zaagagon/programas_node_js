@@ -35,13 +35,17 @@ function App() {
         <nav>
           <Link to="/" className="btn btn-primary me-2">Inicio</Link>
           <Link to="/acerca" className="btn btn-secondary me-2">Acerca</Link>
-          <Link to="/insertar-datos" className="btn btn-success">Insertar Datos</Link> {/* Agrega un enlace para la inserción */}
-          <Link to="/actualizar-datos" className="btn btn-warning">Actualizar Datos</Link> {/* Agrega un enlace para la actualización */}
+          <Link to="/insertar-datos" className="btn btn-success">Insertar Datos</Link> 
+          {/* Agrega un enlace para la inserción */}
+          <Link to="/inicio2" className="btn btn-warning">Facturación</Link>
+          {/* Agrega un enlace para la actualización */}
+        
+          {/* Agrega un enlace para la actualización */}
 
         </nav>
 
         <Routes>
-          <Route path="/api" element={<Inicio2 />} />
+          <Route path="/api/obtener-datos" element={<Inicio2 />} />
           <Route path="/" element={<Inicio />} />
           <Route path="/acerca" element={<Acerca datos={datos} />} />
           <Route path="/insertar-datos" element={<InsertarDatos />} /> {/* Agrega una nueva ruta para la inserción */}
