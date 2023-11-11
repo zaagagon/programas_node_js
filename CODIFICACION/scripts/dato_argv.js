@@ -17,3 +17,6 @@ keys.forEach(function(key) {
     console.log(key + ': ' + heroe[key]);
   });
 
+  let tamaño=Object.keys.length
+  console.log(`datos que contiene ${tamaño}`);
+
