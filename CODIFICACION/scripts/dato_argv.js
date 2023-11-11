@@ -7,14 +7,13 @@ let heroe = {
 } 
 //muestra información del objeto
 console.log(heroe.nombre);
-console.log(heroe.key[0]);
+
 
 //object keys
 //clave : valor
 let keys= Object.keys(heroe)
+//muestra información del objeto
+keys.forEach(function(key) {
+    console.log(key + ': ' + heroe[key]);
+  });
 
-let dato= heroe.forEach(element => {
-    return element
-});
-
-console.log(dato);
