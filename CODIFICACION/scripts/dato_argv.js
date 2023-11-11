@@ -5,5 +5,5 @@ let heroe = {
     nick : 'capitan america'
 
 } 
-
+//muestra información del objeto
 console.log(heroe.nombre);
