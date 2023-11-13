@@ -12,8 +12,11 @@ let ironMan = {
 };
 
 //organizar en un array
-let heroes = [capitanAmerica, ironMan, blackWidow, thor];
-
+heroes.forEach((heroe, indice) => {
+    console.log(`\nInformación del héroe ${indice + 1}:`);
+    console.log('Nombre:', heroe.nombre);
+    console.log('Nick:', heroe.nick);
+});
 
 //muestra información del objeto
 console.log(heroe.nombre);
