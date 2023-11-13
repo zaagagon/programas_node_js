@@ -1,6 +1,6 @@
 //datos por argv
 
-let heroe = {
+let capitanAmerica = {
     nombre : 'Steve',
     nick : 'capitan america'
 
@@ -10,6 +10,11 @@ let ironMan = {
     nombre: 'Tony',
     nick: 'Iron Man'
 };
+
+//organizar en un array
+let heroes = [capitanAmerica, ironMan, blackWidow, thor];
+
+
 //muestra información del objeto
 console.log(heroe.nombre);
 
