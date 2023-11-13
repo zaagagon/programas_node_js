@@ -5,6 +5,11 @@ let heroe = {
     nick : 'capitan america'
 
 } 
+//otro objeto
+let ironMan = {
+    nombre: 'Tony',
+    nick: 'Iron Man'
+};
 //muestra información del objeto
 console.log(heroe.nombre);
 
