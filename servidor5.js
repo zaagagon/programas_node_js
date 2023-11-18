@@ -3,8 +3,8 @@ express=require('express')
 //creamos instancia
 const app= express()
 //creamos ruta de prueba del servidor
-app.get('/',(res, req){
-    <h1>home en construcción</h1>
+app.get('/',(req, res)=>{
+    res.send('<h1>home en construcción</h1>')
 })
 
 let puerto = process.argv[2]
