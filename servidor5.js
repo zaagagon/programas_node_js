@@ -4,7 +4,7 @@ express=require('express')
 const app= express()
 //creamos ruta de prueba del servidor
 app.get('/',(req, res)=>{
-    res.send('<h1>home en construcción</h1>')
+    res.send('<h1>*home en construcción*</h1>')
 })
 
 let puerto = process.argv[2]
