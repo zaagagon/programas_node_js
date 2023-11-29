@@ -7,4 +7,7 @@ console.log("holita" + nombre);
 let arreglo=["pilas", 4,5,"yolis"]
 
 console.log(arreglo[3]) //muestra yolis
+array.forEach(element => {
+    //revisar foreach
+});
 
