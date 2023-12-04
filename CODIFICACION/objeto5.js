@@ -8,5 +8,5 @@ const cliente = {
   
   // Muestra objeto en la consola
   console.log(cliente);
-  console.log(persona.edad);
-  console.log(persona["nombre"]);
+  console.log(cliente.edad);
+  console.log(cliente["nombre"]);
