@@ -7,6 +7,6 @@ const cliente = {
   };
   
   // Muestra objeto en la consola
-  console.log(persona);
+  console.log(cliente);
   console.log(persona.edad);
   console.log(persona["nombre"]);
