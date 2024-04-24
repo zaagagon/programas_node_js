@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de visualización de JSON en JavaScript</title>
+</head>
+<body>
+    <h1>Visualización de JSON en JavaScript</h1>
+    <p>Abre la consola del navegador para ver el resultado JSON.</p>
+    <script>
+        // Crear un objeto en JavaScript
+        var persona = {
+            nombre: "Juan",
+            edad: 30,
+            ciudad: "Barcelona",
+            hobbies: ["fútbol", "lectura", "viajar"],
+            trabajo: {
+                titulo: "Ingeniero de software",
+                empresa: "TechCo"
+            }
+        };
+
+        // Convertir el objeto a formato JSON
+        var jsonPersona = JSON.stringify(persona);
+
+        // Mostrar el JSON en la consola
+        console.log(jsonPersona);
+        alert("datos mostrados por consola del navegador");
+    </script>
+</body>
+</html>

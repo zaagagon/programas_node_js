@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes, Notas y Materias</title>
+</head>
+<body>
+    <h1>Gestión de Estudiantes, Notas y Materias</h1>
+
+    <h2>Estudiantes</h2>
+    <ul id="lista-estudiantes"></ul>
+
+    <h2>Notas</h2>
+    <ul id="lista-notas"></ul>
+
+    <h2>Materias</h2>
+    <ul id="lista-materias"></ul>
+
+    <script>
+        // Objeto JSON con colecciones de estudiantes, notas y materias
+        var data = {
+            estudiantes: [
+                { id: 1, nombre: "Juan", edad: 20 },
+                { id: 2, nombre: "María", edad: 22 },
+                { id: 3, nombre: "Pedro", edad: 21 }
+            ],
+            notas: [
+                { id_estudiante: 1, id_materia: 1, valor: 85 },
+                { id_estudiante: 1, id_materia: 2, valor: 90 },
+                { id_estudiante: 2, id_materia: 1, valor: 78 },
+                { id_estudiante: 2, id_materia: 2, valor: 95 },
+                { id_estudiante: 3, id_materia: 1, valor: 82 },
+                { id_estudiante: 3, id_materia: 2, valor: 88 }
+            ],
+            materias: [
+                { id: 1, nombre: "Matemáticas" },
+                { id: 2, nombre: "Ciencias" }
+            ]
+        };
+
+        // Función para mostrar los estudiantes en la lista
+        function mostrarEstudiantes() {
+            var listaEstudiantes = document.getElementById("lista-estudiantes");
+            data.estudiantes.forEach(function(estudiante) {
+                var li = document.createElement("li");
+                li.textContent = "ID: " + estudiante.id + ", Nombre: " + estudiante.nombre + ", Edad: " + estudiante.edad;
+                listaEstudiantes.appendChild(li);
+            });
+        }
+
+        // Función para mostrar las notas en la lista
+        function mostrarNotas() {
+            var listaNotas = document.getElementById("lista-notas");
+            data.notas.forEach(function(nota) {
+                var li = document.createElement("li");
+                var estudiante = data.estudiantes.find(e => e.id === nota.id_estudiante);
+                var materia = data.materias.find(m => m.id === nota.id_materia);
+                li.textContent = "Estudiante: " + estudiante.nombre + ", Materia: " + materia.nombre + ", Nota: " + nota.valor;
+                listaNotas.appendChild(li);
+            });
+        }
+
+        // Función para mostrar las materias en la lista
+        function mostrarMaterias() {
+            var listaMaterias = document.getElementById("lista-materias");
+            data.materias.forEach(function(materia) {
+                var li = document.createElement("li");
+                li.textContent = "ID: " + materia.id + ", Nombre: " + materia.nombre;
+                listaMaterias.appendChild(li);
+            });
+        }
+
+        // Llamar a las funciones para mostrar la información
+        mostrarEstudiantes();
+        mostrarNotas();
+        mostrarMaterias();
+    </script>
+</body>
+</html>
