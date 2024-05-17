@@ -6,7 +6,7 @@
 const express = require('express')
 //tomamos el puerto
 
-const port=3004
+const port=3007
 //creamos el objeto o instancia de express
 const app= express()
 
@@ -19,12 +19,12 @@ const app= express()
 //definir ruta + controlador = home
 
 app.get('/home',(req,res)=>{
-    res.send('<h1>Inicio en construcción<h1>');
+    res.send('<h1>Inicio de facturación taller<h1>');
     
 }
 )
 app.get('/',(req,res)=>{
-    res.send('<h1>Inicio en construcción<h1>');
+    res.send('<h1>Inicio en construcción  taller de Carlos<h1>');
     
 }
 )
@@ -48,5 +48,5 @@ app.get('/about', function (req, res) {
 //puerto escucha
 
 app.listen(port,()=>{
-    console.log(`servidor escuchando en.. ${port}`)
+    console.log(`servidor de Romero escuchando en.. ${port}`)
 })

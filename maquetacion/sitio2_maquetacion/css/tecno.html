@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar con Bootstrap y Popover</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+
+    .navbar-custom {
+      background-color: #007bff; /* Color de fondo */
+    }
+
+    .navbar-custom .navbar-brand {
+      color: #ffffff; /* Color del texto de la marca */
+    }
+
+    .navbar-custom .nav-link {
+      color: #ffffff; /* Color del texto de los enlaces */
+    }
+
+    .navbar-custom .dropdown-menu {
+      background-color: #007bff; /* Color de fondo del menú desplegable */
+    }
+
+    .navbar-custom .dropdown-item {
+      color: #ffffff; /* Color del texto de los elementos del menú desplegable */
+    }
+
+    .navbar-custom .dropdown-item:hover {
+      background-color: #589ce4; /* Color de fondo al pasar el ratón sobre los elementos del menú desplegable */
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-custom">
+    <a class="navbar-brand" href="#" data-bs-toggle="popover" title="Motivación" data-bs-content="La motivación es lo que te pone en marcha, el hábito es lo que hace que sigas" >Wall-E@TECH</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProductos" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Productos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownProductos">
+            <a class="dropdown-item" href="#">Laptops</a>
+            <a class="dropdown-item" href="#">Teléfonos</a>
+            <a class="dropdown-item" href="#">Accesorios</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownClientes" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Clientes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownClientes">
+            <a class="dropdown-item" href="#">Registrar Cliente</a>
+            <a class="dropdown-item" href="#">Ver Clientes</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNosotros" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Nosotros
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownNosotros">
+            <a class="dropdown-item" href="#">Acerca de Nosotros</a>
+            <a class="dropdown-item" href="#">Contacto</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+      })
+    })
+  </script>
+</body>
+</html>
