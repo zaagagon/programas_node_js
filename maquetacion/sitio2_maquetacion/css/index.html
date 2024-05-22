@@ -30,6 +30,7 @@
     
     
     </head>
+    <script src="../js/mensaje.js"></script>
     <body>
 
         <div class="container">
@@ -38,6 +39,11 @@
 
         Ejemplo de practica en html y css, para aprender maqueteación.
 
+
+        <div id="miDiv">
+            algo con JavaScript
+            <button id="miBoton">Haz clic aquí</button>
+        </div>
         <div class="listas">
             
             <ul>
@@ -51,6 +57,18 @@
         <button>click aqui</button>
 
         <a href="tecno.html" class="btn2">Haz Clic Aquí</a>
-        
+        <script>
+            // Seleccionar el botón y el div
+const miBoton = document.getElementById('miBoton');
+const miDiv = document.getElementById('miDiv');
+
+// Función para cambiar el contenido del div cuando se hace clic en el botón
+function cambiarContenido() {
+  miDiv.innerHTML = '<h2>Has hecho clic en el botón</h2>';
+}
+
+// Agregar un evento de clic al botón que llame a la función cambiarContenido
+miBoton.addEventListener('click', cambiarContenido);
+        </script>
     </body>
 </html>
