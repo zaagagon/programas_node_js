@@ -11,7 +11,7 @@ console.log(process.argv);
 //tomar el nombre por consola
 console.log("Hola " +process.argv[2]);
 
-
+//prueba
 //importar modulo suma
 const {suma,multiplicar}=require('./modulo_suma.js')
 //importar multiplicar
