@@ -9,7 +9,8 @@ console.log('hola zag');
 console.log(process.argv);
 
 //tomar el nombre por consola
-console.log("Hola " +process.argv[2]);
+console.log("Hola " +
+    [2]);
 
 //prueba
 //importar modulo suma
