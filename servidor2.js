@@ -24,7 +24,7 @@ app.get('/home',(req,res)=>{
 }
 )
 app.get('/',(req,res)=>{
-    res.send('<h1>Inicio en construcción  taller de Carlos<h1>');
+    res.send('<h1>Inicio en construcción  JAZIEL<h1>');
     
 }
 )
