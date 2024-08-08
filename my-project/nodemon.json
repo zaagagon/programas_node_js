@@ -1,0 +1,12 @@
+{
+    "watch": ["backend/src"],
+    "ext": "js,json",
+    "ignore": ["backend/node_modules"],
+    "execMap": {
+      "js": "node --inspect"
+    },
+    "events": {
+      "restart": "npm run dev"
+    }
+  }
+  
