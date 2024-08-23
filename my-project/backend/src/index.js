@@ -6,8 +6,9 @@ const port = 5009;
 app.use(express.json());
 
 let tasks = [
-    { id: 1, title: 'Task 1', completed: false },
-    { id: 2, name: 'Task 2', completed: false }
+    { id: 1, title: 'Tarea 1', completed: false },
+    { id: 2, name: 'Tarea 2', completed: false },
+    { id: 3, name: 'Tarea 3', completed: false }
 ];
 
 // Endpoints de la API
