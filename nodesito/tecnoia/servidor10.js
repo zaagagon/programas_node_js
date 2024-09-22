@@ -1,3 +1,4 @@
+//proyecto que corre con npx sin instalar nodemon de manera global en nuestro sistema
 const express = require('express')
 const app = express()
 const path=require('path')
