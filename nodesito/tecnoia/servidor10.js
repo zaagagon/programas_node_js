@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname,'public')))
 //ruta de mensaje
 app.get('/mensaje', (req, res) => res.send('Hello CodeExplorers **!'))
 
-app.get('/', (req, res) => {
+app.get('/api/personajes', (req, res) => {
     const personajes=[
 
         {
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
         },
         {}
     ]
-  res.send('GET request to the homepage')
+  res.send(personajes)
 })
 
 app.listen(port, () => console.log(`Server listening on port ${port}!`))
