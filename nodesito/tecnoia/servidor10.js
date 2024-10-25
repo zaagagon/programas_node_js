@@ -2,7 +2,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const app = express();
 const path = require('path');
-const port = 3004;
+const port = 3007;
 
 // Middleware para servir archivos estáticos desde la carpeta 'public'
 app.use(express.static(path.join(__dirname, 'public')));
@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 
 // Ruta de mensaje
-app.get('/mensaje', (req, res) => res.send('<h1>Hello CodeExplorers practicando express !</h1>'));
+app.get('/mensaje', (req, res) => res.send('<h1>Hola CodeExplorers practicando con Expressy watch!</h1>'));
 
 // Ruta para mostrar el formulario
 app.get('/formulario', (req, res) => {
