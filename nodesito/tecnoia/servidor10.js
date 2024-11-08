@@ -2,7 +2,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const app = express();
 const path = require('path');
-const port = 3007;
+const port = 3025;
 
 // Middleware para servir archivos estáticos desde la carpeta 'public'
 app.use(express.static(path.join(__dirname, 'public')));
@@ -37,10 +37,22 @@ app.post('/procesar-formulario', (req, res) => {
 // Ruta de API personajes
 app.get('/api/personajes', (req, res) => {
     const personajes = [
-        { name: 'logan', nickname: 'wolverine', power: 'healing factor, adamantium claws' },
-        { name: 'dfds', nickname: 'dfsdfs', power: '' }
+        { id :1, name: 'logan', nickname: 'wolverine', power: 'healing factor, adamantium claws' },
+        { id :2, name: 'dfds', nickname: 'dfsdfs', power: '' }
     ];
     res.send(personajes);
+});
+
+// **Ruta dinámica para obtener un personaje por ID**
+app.get('/api/personajes/:id', (req, res) => {
+    const id = parseInt(req.params.id); // Convertir el ID a número
+    const personaje = personajes.find(p => p.id === id); // Buscar personaje por ID
+
+    if (!personaje) {
+        return res.status(404).send('Personaje no encontrado');
+    }
+
+    res.json(personaje);
 });
 
 // Configurar la conexión a la base de datos
