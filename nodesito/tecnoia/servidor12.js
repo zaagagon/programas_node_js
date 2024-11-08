@@ -36,7 +36,7 @@ connection.connect((err) => {
         console.error('Error al conectar a la base de datos MySQL:', err);
         return;
     }
-    console.log('Conexión exitosa a MySQL');
+    console.log('**Conexión exitosa a MySQL**');
 });
 
 // Middleware
@@ -45,7 +45,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Rutas de ejemplo y formulario
-app.get('/mensaje', (req, res) => res.send('<h1>Hola CodeExplorers practicando con Express y watch!</h1>'));
+app.get('/mensajero', (req, res) => res.send('<h1>Hola CodeExplorers practicando con Express y watch!</h1>'));
+
+app.get('/mensaje2', (req, res) => res.json('Hola CodeExplorers practicando con Express y watch!'));
 
 app.get('/formulario', (req, res) => {
     res.send(`
