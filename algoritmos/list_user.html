@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardar Usuario en Local Storage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        #formUsuario {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007acc;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: 300px;
+        }
+
+        li {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registro de Usuarios</h1>
+    <form id="formUsuario">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="number" id="edad" placeholder="Edad" required>
+        <button type="submit">Guardar Usuario</button>
+    </form>
+
+    <h2>Lista de Usuarios</h2>
+    <ul id="listaUsuarios"></ul>
+
+    <script>
+        // Cargar usuarios al cargar la página
+        document.addEventListener("DOMContentLoaded", cargarUsuarios);
+
+        // Agregar evento al formulario para guardar el usuario
+        document.getElementById("formUsuario").addEventListener("submit", function(event) {
+            event.preventDefault();  // Evitar recargar la página
+
+            // Obtener los valores de los inputs
+            const nombre = document.getElementById("nombre").value;
+            const edad = document.getElementById("edad").value;
+
+            if (nombre && edad) {
+                // Crear objeto de usuario
+                const usuario = { nombre, edad };
+
+                // Guardar usuario en Local Storage
+                guardarUsuarioEnLocalStorage(usuario);
+
+                // Agregar usuario a la lista en el HTML
+                agregarUsuarioHTML(usuario);
+
+                // Limpiar formulario
+                document.getElementById("formUsuario").reset();
+            }
+        });
+
+        // Función para cargar los usuarios desde Local Storage
+        function cargarUsuarios() {
+            const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+            usuarios.forEach(usuario => agregarUsuarioHTML(usuario));
+        }
+
+        // Función para guardar un usuario en Local Storage
+        function guardarUsuarioEnLocalStorage(usuario) {
+            const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+            usuarios.push(usuario);
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        }
+
+        // Función para agregar un usuario al HTML
+        function agregarUsuarioHTML(usuario) {
+            const lista = document.getElementById("listaUsuarios");
+            const li = document.createElement("li");
+            li.textContent = `Nombre: ${usuario.nombre}, Edad: ${usuario.edad}`;
+            lista.appendChild(li);
+        }
+    </script>
+</body>
+</html>

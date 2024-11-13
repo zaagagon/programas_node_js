@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón CSS</title>
+    <style>
+        /* Estilo del botón */
+        .mi-boton {
+            background-color: #007BFF; /* Azul inicial */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Transición suave al cambiar de color */
+            transition: background-color 0.3s, box-shadow 0.3s; /* Transición suave */
+            box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5); /* Sombra */
+        }
+
+        /* Cambiar a verde cuando se pasa el ratón */
+        .mi-boton:hover {
+            background-color: #28a745; /* Verde al pasar el ratón */
+            padding: 40px 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botón con clase mi-boton y texto "CSS" -->
+    <button class="mi-boton">CSS</button>
+
+</body>
+</html>
