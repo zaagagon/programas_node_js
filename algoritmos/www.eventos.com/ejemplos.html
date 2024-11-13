@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Manipulación del DOM</title>
+</head>
+<body>
+    <h1 id="header">Encabezado Original</h1>
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <p>Este es un párrafo de ejemplo.</p>
+    <div class="main">Div principal</div>
+    <button>Botón 1</button>
+    <button>Botón 2</button>
+    
+    <div id="container">Contenedor original</div>
+    <div id="reference">Referencia para insertar antes</div>
+    <a href="https://example.com">Enlace de ejemplo</a>
+    <div id="box">Caja de ejemplo</div>
+    <button id="clickButton">Haz clic aquí</button>
+    <div id="parent">
+        <div id="child">Hijo</div>
+    </div>
+    <div id="content">Contenido original</div>
+    
+    <script>
+        // 1. Selección de Elementos
+        // document.getElementById(id)
+        let header = document.getElementById('header');
+        header.textContent = 'Bienvenido a mi sitio web'; // Cambia el texto del encabezado
+
+        // document.getElementsByClassName(className)
+        let items = document.getElementsByClassName('item');
+        Array.from(items).forEach(item => item.style.color = 'blue'); // Cambia el color de los elementos con clase 'item'
+
+        // document.getElementsByTagName(tagName)
+        let paragraphs = document.getElementsByTagName('p');
+        paragraphs[0].textContent = 'Este es el primer párrafo'; // Cambia el texto del primer párrafo
+
+        // document.querySelector(selector)
+        let main = document.querySelector('.main');
+        main.style.backgroundColor = 'lightgrey'; // Cambia el fondo del primer elemento con clase 'main'
+
+        // document.querySelectorAll(selector)
+        let buttons = document.querySelectorAll('button');
+        buttons.forEach(button => button.classList.add('active')); // Añade la clase 'active' a todos los botones
+
+        // 2. Manipulación de Contenido
+        // element.innerHTML
+        let container = document.getElementById('container');
+        container.innerHTML = '<h2>Título dinámico</h2><p>Nuevo contenido</p>'; // Cambia el contenido HTML del contenedor
+
+        // element.textContent
+        let paragraph = document.querySelector('p');
+        paragraph.textContent = 'Texto actualizado sin HTML'; // Cambia solo el texto, no HTML
+
+        // element.innerText
+        let hiddenText = document.getElementById('header');
+        hiddenText.innerText = 'Texto solo visible'; // Cambia el texto visible
+
+        // element.outerHTML
+        let div = document.getElementById('content');
+        console.log(div.outerHTML); // Muestra el HTML completo del elemento en consola
+
+        // 3. Creación y Modificación de Elementos
+        // document.createElement(tagName)
+        let newDiv = document.createElement('div');
+        newDiv.textContent = 'Soy un nuevo div';
+
+        // element.appendChild(child)
+        container.appendChild(newDiv); // Añade el nuevo div al final del contenedor
+
+        // element.insertBefore(newElement, referenceElement)
+        container.insertBefore(newDiv, reference); // Inserta el nuevo div antes del elemento de referencia
+
+        // element.removeChild(child)
+        container.removeChild(newDiv); // Elimina el nuevo div del contenedor
+
+        // element.replaceChild(newChild, oldChild)
+        let replacementDiv = document.createElement('div');
+        replacementDiv.textContent = 'Elemento reemplazado';
+        container.replaceChild(replacementDiv, reference); // Reemplaza el elemento de referencia con el nuevo div
+
+        // 4. Manipulación de Atributos
+        // element.getAttribute(attrName)
+        let link = document.querySelector('a');
+        console.log(link.getAttribute('href')); // Obtiene el valor del atributo 'href'
+
+        // element.setAttribute(attrName, value)
+        link.setAttribute('target', '_blank'); // Establece el atributo target para abrir el enlace en una nueva pestaña
+
+        // element.removeAttribute(attrName)
+        link.removeAttribute('target'); // Elimina el atributo target
+
+        // element.hasAttribute(attrName)
+        console.log(link.hasAttribute('href')); // Verifica si el enlace tiene el atributo 'href'
+
+        // 5. Estilos y Clases
+        // element.style.propertyName
+        let box = document.getElementById('box');
+        box.style.color = 'red'; // Cambia el color del texto de la caja
+
+        // element.classList.add(className)
+        box.classList.add('highlight'); // Añade la clase 'highlight' a la caja
+
+        // element.classList.remove(className)
+        box.classList.remove('highlight'); // Elimina la clase 'highlight' de la caja
+
+        // element.classList.toggle(className)
+        box.classList.toggle('active'); // Alterna la clase 'active' en la caja
+
+        // element.classList.contains(className)
+        console.log(box.classList.contains('active')); // Verifica si la caja tiene la clase 'active'
+
+        // 6. Eventos
+        // element.addEventListener(event, function)
+        let button = document.getElementById('clickButton');
+        button.addEventListener('click', () => alert('Botón clickeado')); // Muestra una alerta al hacer clic en el botón
+
+        // element.removeEventListener(event, function)
+        function handleClick() {
+            alert('Botón clickeado');
+        }
+        button.addEventListener('click', handleClick);
+        button.removeEventListener('click', handleClick); // Elimina el listener del evento clic
+
+        // 7. Navegación en el DOM
+        // element.parentNode
+        let child = document.getElementById('child');
+        console.log(child.parentNode); // Muestra el nodo padre del elemento hijo
+
+        // element.children
+        let parent = document.getElementById('parent');
+        console.log(parent.children); // Muestra los elementos hijos
+
+        // element.firstChild
+        console.log(parent.firstChild); // Muestra el primer hijo del nodo padre (puede incluir nodos de texto)
+
+        // element.lastChild
+        console.log(parent.lastChild); // Muestra el último hijo del nodo padre
+
+        // element.nextSibling
+        let item = document.getElementById('child');
+        console.log(item.nextSibling); // Muestra el siguiente nodo hermano
+
+        // element.previousSibling
+        console.log(item.previousSibling); // Muestra el nodo hermano anterior
+
+        // 8. Dimensiones y Posición
+        // element.getBoundingClientRect()
+        let element = document.getElementById('box');
+        console.log(element.getBoundingClientRect()); // Muestra las dimensiones y la posición del elemento
+
+        // element.offsetWidth y element.offsetHeight
+        console.log(element.offsetWidth); // Muestra el ancho del elemento
+        console.log(element.offsetHeight); // Muestra el alto del elemento
+
+        // element.scrollTop y element.scrollLeft
+        console.log(element.scrollTop); // Muestra la posición de desplazamiento vertical
+        console.log(element.scrollLeft); // Muestra la posición de desplazamiento horizontal
+    </script>
+</body>
+</html>
