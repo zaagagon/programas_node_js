@@ -3,7 +3,7 @@ const { MongoClient, ObjectId } = require('mongodb'); // MongoDB Client y Object
 const mysql = require('mysql2');
 const path = require('path');
 const app = express();
-const port = 3050;
+const port = 3007;
 
 // Configuración de MongoDB
 const mongoUri = 'mongodb://servidor10:27017'; // Cambia 'servidor10' por tu IP o hostname de MongoDB
@@ -87,7 +87,7 @@ app.get('/api/personajes', async (req, res) => {
         res.json(personajes);
     } catch (err) {
         console.error('Error al obtener los personajes:', err);
-        res.status(500).send('Error en el servidor');
+        res.status(500).send('Error en el servidor**');
     }
 });
 

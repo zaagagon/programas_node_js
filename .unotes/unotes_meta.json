@@ -1,0 +1,135 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "CODIFICACION": {
+      "name": "CODIFICACION",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "algoritmos": {
+      "name": "algoritmos",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "app": {
+      "name": "app",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "archivo_json": {
+      "name": "archivo_json",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "examples_react": {
+      "name": "examples_react",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "hola-mundo": {
+      "name": "hola-mundo",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "javascript_css": {
+      "name": "javascript_css",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "kva": {
+      "name": "kva",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "maquetacion": {
+      "name": "maquetacion",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "matrix": {
+      "name": "matrix",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "my-project": {
+      "name": "my-project",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "my_api": {
+      "name": "my_api",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "nodesito": {
+      "name": "nodesito",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "practicando_js": {
+      "name": "practicando_js",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "probando": {
+      "name": "probando",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "pruebita": {
+      "name": "pruebita",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "public": {
+      "name": "public",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "servidor_static": {
+      "name": "servidor_static",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "servidor_web": {
+      "name": "servidor_web",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "servidor_web2": {
+      "name": "servidor_web2",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "walle": {
+      "name": "walle",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    }
+  },
+  "files": {
+    "README": 0
+  }
+}

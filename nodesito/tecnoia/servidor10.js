@@ -40,6 +40,8 @@ app.get('/api/personajes', (req, res) => {
         { id :1, name: 'logan', nickname: 'wolverine', power: 'healing factor, adamantium claws' },
         { id :2, name: 'dfds', nickname: 'dfsdfs', power: '' }
     ];
+
+    
     res.send(personajes);
 });
 
