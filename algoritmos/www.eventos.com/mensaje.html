@@ -9,6 +9,7 @@
     <!-- Elemento donde mostraremos el mensaje -->
     <h1 id="mensaje">Este es el mensaje original</h1>
     <p id="parrafo" style="display:none">texto oculto con secretos **</p>
+    <p id="parrafo2" style="display: none;">cohistas variras **</p>
 
     <!-- Botón para cambiar el mensaje -->
     <button onclick="cambiarMensaje()">Haz clic para cambiar el mensaje</button>
@@ -27,9 +28,7 @@
 
 
     <script>
-        function alerta(){
-            alert("cambios en html");
-        }
+       alert("dfsdfsdff")
         // Función para cambiar el mensaje
         function cambiarMensaje() {
             // Usar getElementById para seleccionar el elemento con id "mensaje"
@@ -39,6 +38,7 @@
             mensajeElemento.textContent = "¡El mensaje ha sido cambiado!";
         }
         console.log(document.getElementById("parrafo").innerText);
+        console.log(document.getElementById("parrafo2").innerText);
 
     </script>
 </body>
