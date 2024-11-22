@@ -169,7 +169,7 @@ app.delete('/api/personajes/:id', async (req, res) => {
     }
 });
 
-// Rutas de MySQL
+// Rutas de MySQL ** Consulta tabla usuarios
 app.get('/usuarios2', (req, res) => {
     const query = 'SELECT * FROM usuarios';
     connection.query(query, (err, results) => {
