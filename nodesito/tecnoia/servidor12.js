@@ -44,6 +44,32 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Simular una lista de empleados
+let personajes2 = [
+    { id: 1, nombre: 'Juan', puesto: 'Desarrollador' },
+    { id: 2, nombre: 'Ana', puesto: 'Diseñadora' },
+    { id: 3, nombre: 'Carlos', puesto: 'Tester' },
+    { id: 4, nombre: 'Jennifer', puesto: 'Desarrolladora' },
+    { id: 5, nombre: 'Evelio', puesto: 'Desarrollador' }
+
+];
+
+// Inicialización del diccionario "personajes"
+const personajes = {
+    "Marvel": [
+        { "nombre": "Iron Man", "poder": "Tecnología" },
+        { "nombre": "Thor", "poder": "Trueno" }
+    ],
+    "DC": [
+        { "nombre": "Batman", "poder": "Inteligencia" },
+        { "nombre": "Superman", "poder": "Fuerza sobrehumana" }
+    ],
+    "Star Wars": [
+        { "nombre": "Luke Skywalker", "poder": "Fuerza" },
+        { "nombre": "Darth Vader", "poder": "Lado oscuro de la Fuerza" }
+    ]
+};
+
 // Rutas de ejemplo y formulario
 app.get('/mensajero', (req, res) => res.send('<h1>Hola CodeExplorers practicando con Express y watch!</h1>'));
 
