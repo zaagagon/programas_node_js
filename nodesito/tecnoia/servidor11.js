@@ -8,7 +8,8 @@ let empleados = [
     { id: 2, nombre: 'Ana', puesto: 'Diseñadora' },
     { id: 3, nombre: 'Carlos', puesto: 'Tester' },
     { id: 4, nombre: 'Jennifer', puesto: 'Desarrolladora' },
-    { id: 5, nombre: 'Evelio', puesto: 'Desarrollador' }
+    { id: 5, nombre: 'Evelio', puesto: 'Desarrollador' },
+    { id: 6, nombre: 'Deadpool', puesto: 'Fullstack' }
 
 ];
 
