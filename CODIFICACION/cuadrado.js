@@ -1,5 +1,8 @@
 // Obtén el valor del lado del cuadrado desde process.argv
 const lado = process.argv[2];
+console.log(process.argv[2]);
+console.log(process.argv[3]);
+
 
 // Convierte el valor del lado a un número
 const ladoNumero = parseFloat(lado);
