@@ -73,7 +73,7 @@ const personajes = {
 // Rutas de ejemplo y formulario
 app.get('/mensajero', (req, res) => res.send('<h1>Hola CodeExplorers practicando con Express y watch!</h1>'));
 
-app.get('/mensaje2', (req, res) => res.json('Hola CodeExplorers practicando con Express y watch!'));
+app.get('/mensaje2', (req, res) => res.json('Hola CodeExplorers practicando con Express y watch 2025!'));
 
 app.get('/formulario', (req, res) => {
     res.send(`
