@@ -1,4 +1,4 @@
-import {suma} from "./supersuma.js"
+const suma = require('./supersuma.js')
 //const resu=supersuma()
 //programa que suma dos numeros ingresados al ejecutar
 n1=process.argv[2]
@@ -9,5 +9,8 @@ console.log(n1);
 console.log(n2);
 console.log(num1+num2);
 suma(1,2)
+const resultado=suma(num1,num2)
+console.log("funcion suma exportada de supersuma : " + resultado);
+
 
 //n1=process.argv[2]
