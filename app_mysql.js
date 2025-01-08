@@ -2,13 +2,13 @@ const express = require('express');
 const mysql = require('mysql2');
 
 const app = express();
-const port = 3000;
+const port = 3003;
 
 // Configuración de conexión a la base de datos
 const db = mysql.createConnection({
   host: 'localhost', // Cambie por la dirección de su servidor MySQL
   user: 'root',      // Usuario de su base de datos
-  password: '',      // Contraseña de su base de datos
+  password: '123456789',      // Contraseña de su base de datos
   database: 'prueba4' // Nombre de la base de datos
 });
 
@@ -22,14 +22,18 @@ db.connect((err) => {
 });
 
 // Ruta para obtener los registros de la tabla usuarios
+
+app.get('/',(req,res)=>{
+    res.send('ho');
+})
 app.get('/usuarios', (req, res) => {
-  const query = 'SELECT * FROM usuarios';
+  const query = 'SELECT * FROM personas';
   
   db.query(query, (err, results) => {
-    if (err) {
+   /* if (err) {
       console.error('Error al ejecutar la consulta:', err.message);
       return res.status(500).send('Error al obtener los registros.');
-    }
+    }*/
     
     res.json(results); // Enviar los registros en formato JSON
   });
