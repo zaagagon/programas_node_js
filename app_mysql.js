@@ -27,9 +27,9 @@ app.get('/',(req,res)=>{
     res.send('ho');
 })
 app.get('/usuarios', (req, res) => {
-  const query = 'SELECT * FROM personas';
+  //const query = 'SELECT * FROM personas';
   
-  db.query(query, (err, results) => {
+  db.query('select * FROM personas', (err, results) => {
    /* if (err) {
       console.error('Error al ejecutar la consulta:', err.message);
       return res.status(500).send('Error al obtener los registros.');
