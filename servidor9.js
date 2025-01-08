@@ -17,7 +17,7 @@ app.get('/about', (req, res) => {
 });
 
 // Iniciar servidor
-const PORT = 9011;
+const PORT = 9012;
 app.listen(PORT, () => {
     console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
 });
