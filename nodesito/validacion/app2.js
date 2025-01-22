@@ -106,6 +106,40 @@ app.get('/profile', (req, res) => {
     res.render('profile', { username: req.session.username });
 });
 
+// Manejar registro y mostrar los datos en /registro2
+app.post('/registro2', (req, res) => {
+    const { username, email, password } = req.body;
+
+    // Validación de campos
+    if (!username || !email || !password) {
+        return res.render('index', { error: 'Todos los campos son obligatorios' });
+    }
+
+    // Generar un hash para la contraseña
+    const hashedPassword = bcrypt.hashSync(password, 10);
+
+    // Consulta para insertar en la base de datos
+    const query = 'INSERT INTO usuarios (username, email, password) VALUES (?, ?, ?)';
+
+    db.query(query, [username, email, hashedPassword], (err) => {
+        if (err) {
+            if (err.code === 'ER_DUP_ENTRY') {
+                return res.render('index', { error: 'El correo ya está registrado. Intenta con otro.' });
+            }
+            return res.render('index', { error: 'Error al registrar usuario. Intente nuevamente.' });
+        }
+
+        // Renderizar una vista con los datos ingresados
+        res.render('registro2', { username, email });
+    });
+});
+
+// Ruta para manejar casos en los que alguien intente acceder directamente a /registro2
+app.get('/registro2', (req, res) => {
+    res.send('Por favor, complete el formulario para registrarse.');
+});
+
+
 // Cerrar sesión
 app.post('/logout', (req, res) => {
     req.session.destroy((err) => {
