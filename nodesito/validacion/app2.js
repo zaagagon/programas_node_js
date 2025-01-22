@@ -54,6 +54,10 @@ app.get('/', (req, res) => {
     res.render('index', { error: null });
 });
 
+app.get('/mensaje', (req, res) => {
+    res.send('registro exitoso');
+});
+
 // Manejar login
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
@@ -96,7 +100,7 @@ app.post('/register', (req, res) => {
             }
             return res.render('index', { error: 'Error al registrar usuario. Intente nuevamente.' });
         }
-        res.redirect('/');
+        res.redirect('/mensaje');
     });
 });
 
