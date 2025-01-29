@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/mensaje', (req, res) => {
-    res.send('registro exitoso');
+    res.send('registro de usuarios exitoso');
 });
 
 // Manejar login
