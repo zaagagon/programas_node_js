@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/mensaje', (req, res) => {
-    res.send('registro de usuarios exitoso');
+    res.send('registro de usuario exitoso');
 });
 
 // Manejar login
@@ -74,7 +74,7 @@ app.post('/login', (req, res) => {
         const user = results[0];
         const isMatch = bcrypt.compareSync(password, user.password);
 
-        if (!isMatch) return res.render('index', { error: 'Contraseña incorrecta' });
+        if (!isMatch) return res.render('index', { error: 'Contraseña incorrecta**' });
 
         req.session.userId = user.id;
         req.session.username = user.username;
