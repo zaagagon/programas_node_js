@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ejemplo de sitio accesible y usable">
+    <title>Sitio Accesible y Usable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, nav, footer {
+            background-color: #0044cc;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        a {
+            color: #0044cc;
+            text-decoration: none;
+        }
+
+        a:focus, a:hover {
+            text-decoration: underline;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #0044cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003399;
+        }
+
+        /* Estilos para el skip link visible */
+        .skip-link {
+            display: block;
+            background: #f1c40f;
+            color: black;
+            padding: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        /* Estilos para el menú */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #0044cc;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Skip link -->
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header>
+        <h1>Sitio Accesible y Usable</h1>
+        <nav>
+            <ul>
+                <li><a href="#contenido">Inicio</a></li>
+                <li><a href="#principios">Principios de Accesibilidad</a></li>
+                <li><a href="#formulario">Formulario</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        <h2 id="principios">Principios de Usabilidad y Accesibilidad</h2>
+        <section>
+            <h3>1. Texto Alternativo y Título para Imágenes</h3>
+            <p>
+                Siempre es importante incluir el atributo <code>alt</code> en las imágenes para que los usuarios con discapacidades visuales puedan entender el contenido. Además, el atributo <code>title</code> muestra una descripción cuando se pasa el cursor sobre la imagen.
+            </p>
+            <img src="https://quodem.com/wp-content/uploads/2022/04/Accesibilidad-web.jpg" alt="Icono representando accesibilidad" title="Icono representando accesibilidad" width="600">
+
+            <h3>2. Navegación clara</h3>
+            <p>
+                El contenido debe ser fácil de navegar, utilizando elementos como los <code>skip links</code> para que los usuarios puedan saltar directamente al contenido.
+            </p>
+        </section>
+
+        <section id="formulario">
+            <h3>3. Formularios Accesibles</h3>
+            <p>
+                Es importante etiquetar correctamente los campos de los formularios y asegurarse de que los botones sean fácilmente identificables y utilizables.
+            </p>
+
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" aria-required="true" placeholder="Escriba su nombre completo">
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" aria-required="true" placeholder="ejemplo@dominio.com">
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sitio Accesible</p>
+    </footer>
+</body>
+</html>

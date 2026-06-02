@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>EL MUNDO DE ZAG</title>
+    </head>
+    <script type="text/javascript">
+        alert("PRACTICANDO HTML CON JS")
+        function valor() {
+            var n1 = document.getElementById("n1").value;
+            var n2 = document.getElementById("n2").value;
+            var resultado = (parseInt(n1,10) + parseInt(n2,10));
+            
+
+            document.getElementById("resultado").value = resultado
+        }
+
+    </script>
+
+    <body>
+        <header>
+            <h1 style="color: brown;text-align: center;">programa que suma con js</h1>
+        </header>
+        <hr style="color: blue; size: 18px; ">
+        <div>
+            <input name="n1" type="text" id="n1" size="8" maxlength="5" />
+        <input name="n1" type="text" id="n2" size="8" maxlength="5" />
+        <input name="suma" type="button" onClick="valor()" value="suma" />
+        <input type="text" id="resultado"/>
+
+        </div>
+
+        
+    </body>
+    <footer>
+        <hr>
+        Copyright &copy; 2023 Aprender Js & HTML desde Cero
+        </footer>
+
+</html>

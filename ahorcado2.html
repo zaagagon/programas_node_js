@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Ahorcado</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyBk5P3ANH5R2UZlH40M7O/1DQVmW9HRR0" crossorigin="anonymous">
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #word-display {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #hangman-img {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+        #attempts-left {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Juego de Ahorcado</h1>
+    <div id="word-display"></div>
+    <div id="hangman-img-container">
+        <img id="hangman-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/hangman0.png" alt="Hangman Image">
+    </div>
+    <div id="attempts-left">Intentos restantes: <span id="attempts"></span></div>
+    <div id="keyboard" class="btn-group" role="group" aria-label="Keyboard">
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-XibAeEx+P64c6LDD2DTL/W1YnTDAzE2L5CXTpTUNs/XEie8fsSC83EnY8f0kNlU0" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyBk5P3ANH5R2UZlH40M7O/1DQVmW9HRR0" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const words = ['javascript', 'bootstrap', 'web', 'programming', 'developer', 'hangman'];
+        let selectedWord = words[Math.floor(Math.random() * words.length)];
+        let guessedLetters = [];
+        let attemptsLeft = 6;
+
+        function displayWord() {
+            const wordDisplay = document.getElementById('word-display');
+            wordDisplay.innerHTML = selectedWord
+                .split('')
+                .map(letter => guessedLetters.includes(letter) ? letter : '_')
+                .join(' ');
+
+            checkGameStatus();
+        }
+
+        function displayHangmanImage() {
+            const hangmanImg = document.getElementById('hangman-img');
+            hangmanImg.src = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/hangman${6 - attemptsLeft}.png`;
+        }
+
+        function displayAttemptsLeft() {
+            document.getElementById('attempts').textContent = attemptsLeft;
+        }
+
+        function displayKeyboard() {
+            const keyboard = document.getElementById('keyboard');
+            const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+            alphabet.split('').forEach(letter => {
+                const button = document.createElement('button');
+                button.classList.add('btn', 'btn-primary', 'm-1');
+                button.textContent = letter;
+                button.addEventListener('click', () => handleLetterClick(letter));
+                keyboard.appendChild(button);
+            });
+        }
+
+        function handleLetterClick(letter) {
+            if (!guessedLetters.includes(letter)) {
+                guessedLetters.push(letter);
+                displayWord();
+                if (!selectedWord.includes(letter)) {
+                    attemptsLeft--;
+                    displayHangmanImage();
+                }
+            }
+
+            // Disable the clicked button
+            const clickedButton = document.querySelector(`button:contains('${letter}')`);
+            if (clickedButton) {
+                clickedButton.disabled = true;
+            }
+
+            displayAttemptsLeft();
+        }
+
+        function checkGameStatus() {
+            if (attemptsLeft === 0) {
+                endGame(false);
+            } else if (!document.getElementById('word-display').textContent.includes('_')) {
+                endGame(true);
+            }
+        }
+
+        function endGame(isWinner) {
+            const message = isWinner ? '¡Felicidades! Ganaste.' : '¡Ups! Perdiste. La palabra era: ' + selectedWord;
+            alert(message);
+            resetGame();
+        }
+
+        function resetGame() {
+            selectedWord = words[Math.floor(Math.random() * words.length)];
+            guessedLetters = [];
+            attemptsLeft = 6;
+            document.getElementById('keyboard').innerHTML = '';
+            displayWord();
+            displayHangmanImage();
+            displayAttemptsLeft();
+            displayKeyboard();
+        }
+
+        // Polyfill for :contains selector
+        jQuery.expr[':'].contains = function (a, i, m) {
+            return jQuery(a).text().toUpperCase()
+                .indexOf(m[3].toUpperCase()) >= 0;
+        };
+
+        displayWord();
+        displayHangmanImage();
+        displayAttemptsLeft();
+        displayKeyboard();
+    });
+</script>
+
+</body>
+</html>

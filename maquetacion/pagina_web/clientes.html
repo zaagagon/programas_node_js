@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Maquetación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Mi Página Web</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Acerca de</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home">
+            <h2>Inicio</h2>
+            <p>Este es el contenido de la página de inicio.</p>
+            <button id="alertButton">Haz clic aquí</button>
+        </section>
+        
+        <section id="about">
+            <h2>Acerca de</h2>
+            <p>Información sobre nosotros.</p>
+        </section>
+        
+        <section id="contact">
+            <h2>Contacto</h2>
+            <p>Puedes contactarnos a través de este formulario.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Mi Página Web</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const alertButton = document.getElementById('alertButton');
+            
+            alertButton.addEventListener('click', () => {
+                alert('¡Aprendiendo maquetación!');
+            });
+        });
+    </script>
+</body>
+</html>

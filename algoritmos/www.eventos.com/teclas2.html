@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Teclas Presionadas</title>
+    <style>
+        /* Estilo para el texto que mostrará la tecla */
+        #teclaPresionada {
+            font-size: 2em;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Presiona una tecla</h1>
+    <div id="teclaPresionada">Aquí aparecerá la tecla que presionaste</div>
+
+    <script>
+        // Seleccionar el elemento donde mostraremos la tecla presionada
+        const teclaPresionadaDiv = document.getElementById("teclaPresionada");
+
+        // Escuchar el evento keydown para detectar cuando se presiona una tecla
+        document.addEventListener("keydown", function(event) {
+            // Mostrar la tecla presionada en el elemento
+            teclaPresionadaDiv.textContent = `Tecla presionada: ${event.key}`;
+        });
+    </script>
+</body>
+</html>

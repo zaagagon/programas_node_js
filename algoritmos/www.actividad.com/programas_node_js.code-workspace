@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../../../Users/zagagon/Desktop/www.google.com"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "programas_node_js"
+	}
+}

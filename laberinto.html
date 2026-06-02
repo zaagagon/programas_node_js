@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Laberinto</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #maze-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            border: 2px solid #000;
+            background-color: #eee;
+            overflow: hidden;
+        }
+
+        .cell {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background-color: #fff;
+        }
+
+        .wall {
+            background-color: #000;
+        }
+
+        .start, .end {
+            background-color: #00f;
+        }
+
+        .path {
+            background-color: #0f0;
+        }
+
+        .player {
+            background-color: #f00;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transition: top 0.2s, left 0.2s;
+        }
+    </style>
+</head>
+<body>
+
+<div id="maze-container"></div>
+
+<script>
+    const mazeContainer = document.getElementById("maze-container");
+
+    const maze = [
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 1, 1, 1, 1, 1, 1, 0, 1],
+        [1, 0, 1, 0, 0, 0, 0, 1, 0, 1],
+        [1, 0, 1, 0, 1, 1, 0, 1, 0, 1],
+        [1, 0, 1, 0, 1, 1, 0, 1, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    ];
+
+    function createMaze() {
+        for (let i = 0; i < maze.length; i++) {
+            for (let j = 0; j < maze[i].length; j++) {
+                const cell = document.createElement("div");
+                cell.classList.add("cell");
+                if (maze[i][j] === 1) {
+                    cell.classList.add("wall");
+                } else if (i === 1 && j === 1) {
+                    cell.classList.add("start");
+                } else if (i === maze.length - 2 && j === maze[i].length - 2) {
+                    cell.classList.add("end");
+                }
+                mazeContainer.appendChild(cell);
+            }
+        }
+    }
+
+    function movePlayer(event) {
+        const playerCell = document.querySelector(".player");
+        if (event.key === "ArrowUp") {
+            move(playerCell, -20, 0);
+        } else if (event.key === "ArrowDown") {
+            move(playerCell, 20, 0);
+        } else if (event.key === "ArrowLeft") {
+            move(playerCell, 0, -20);
+        } else if (event.key === "ArrowRight") {
+            move(playerCell, 0, 20);
+        }
+    }
+
+    function move(element, top, left) {
+        const currentTop = parseInt(element.style.top) || 0;
+        const currentLeft = parseInt(element.style.left) || 0;
+
+        const newTop = currentTop + top;
+        const newLeft = currentLeft + left;
+
+        const cellSize = 20;
+
+        // Check if the new position is within the maze boundaries
+        if (
+            newTop >= 0 && newTop < maze.length * cellSize &&
+            newLeft >= 0 && newLeft < maze[0].length * cellSize
+        ) {
+            // Check if the new position is a valid cell (not a wall)
+            const rowIndex = Math.floor(newTop / cellSize);
+            const colIndex = Math.floor(newLeft / cellSize);
+            if (maze[rowIndex][colIndex] !== 1) {
+                element.style.top = newTop + "px";
+                element.style.left = newLeft + "px";
+
+                // Check if the player reached the exit
+                if (rowIndex === maze.length - 2 && colIndex === maze[0].length - 2) {
+                    alert("¡Felicidades! Has llegado a la salida del laberinto.");
+                    resetGame();
+                }
+            }
+        }
+    }
+
+    function resetGame() {
+        const playerCell = document.querySelector(".player");
+        playerCell.style.top = "10px";
+        playerCell.style.left = "10px";
+    }
+
+    createMaze();
+
+    const playerCell = document.createElement("div");
+    playerCell.classList.add("cell", "player");
+    mazeContainer.appendChild(playerCell);
+
+    document.addEventListener("keydown", movePlayer);
+</script>
+
+</body>
+</html>

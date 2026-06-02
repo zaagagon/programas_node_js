@@ -1,0 +1,36 @@
+{
+  "name": "programas_nodejs",
+  "version": "1.0.0",
+  "description": "ejemplos de programas en node",
+  "main": "callback.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaagagon/programas_node_js.git"
+  },
+  "author": "zaagagon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zaagagon/programas_node_js/issues"
+  },
+  "homepage": "https://github.com/zaagagon/programas_node_js#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "chalk": "^4.1.2",
+    "connect-mysql": "^4.0.0",
+    "daemon": "^1.1.0",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mongodb": "^6.10.0",
+    "mysql2": "^3.12.0",
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

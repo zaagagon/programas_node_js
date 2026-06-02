@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Interactivos de Manipulación del DOM</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .section { margin-bottom: 30px; }
+        .section h2 { color: #007acc; }
+        button { margin-top: 5px; padding: 8px; background-color: #007acc; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #005fa3; }
+        .output { margin-top: 10px; padding: 10px; border: 1px solid #ddd; }
+        .description { font-size: 0.9em; color: #555; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>Manipulación del DOM en JavaScript</h1>
+
+    <!-- Selección de Elementos -->
+    <div class="section" id="seleccion">
+        <h2>1. Selección de Elementos</h2>
+        <p class="description">Utiliza los métodos para seleccionar elementos por ID, clase, etiqueta y selector CSS.</p>
+        <button onclick="seleccionPorId()">Seleccionar por ID</button>
+        <button onclick="seleccionPorClase()">Seleccionar por Clase</button>
+        <button onclick="seleccionPorEtiqueta()">Seleccionar por Etiqueta</button>
+        <button onclick="seleccionPorSelector()">Seleccionar con querySelector</button>
+        <button onclick="seleccionPorSelectorAll()">Seleccionar con querySelectorAll</button>
+        <div id="outputSeleccion" class="output">Aquí verás los resultados de la selección.</div>
+    </div>
+
+    <!-- Manipulación de Contenido -->
+    <div class="section" id="contenido">
+        <h2>2. Manipulación de Contenido</h2>
+        <p class="description">Cambia el contenido HTML o de texto de un elemento usando diferentes propiedades.</p>
+        <button onclick="cambiarInnerHTML()">Cambiar innerHTML</button>
+        <button onclick="cambiarTextContent()">Cambiar textContent</button>
+        <button onclick="cambiarInnerText()">Cambiar innerText</button>
+        <div id="outputContenido" class="output">
+            <p>Texto original del párrafo.</p>
+        </div>
+    </div>
+
+    <!-- Creación y Modificación de Elementos -->
+    <div class="section" id="creacion">
+        <h2>3. Creación y Modificación de Elementos</h2>
+        <p class="description">Crea, añade, inserta, elimina y reemplaza elementos en el DOM.</p>
+        <button onclick="crearElemento()">Crear y Añadir Elemento</button>
+        <button onclick="insertarElemento()">Insertar Elemento Antes</button>
+        <button onclick="eliminarElemento()">Eliminar Elemento</button>
+        <button onclick="reemplazarElemento()">Reemplazar Elemento</button>
+        <div id="outputCreacion" class="output">
+            <div id="referencia">Elemento de referencia</div>
+        </div>
+    </div>
+
+    <!-- Manipulación de Atributos -->
+    <div class="section" id="atributos">
+        <h2>4. Manipulación de Atributos</h2>
+        <p class="description">Manipula los atributos de los elementos: obtén, establece, elimina y verifica atributos.</p>
+        <button onclick="mostrarAtributo()">Mostrar Atributo</button>
+        <button onclick="establecerAtributo()">Establecer Atributo</button>
+        <button onclick="eliminarAtributo()">Eliminar Atributo</button>
+        <button onclick="verificarAtributo()">Verificar Atributo</button>
+        <div id="outputAtributos" class="output">
+            <a id="enlace" href="https://example.com">Enlace de ejemplo</a>
+        </div>
+    </div>
+
+    <!-- Estilos y Clases -->
+    <div class="section" id="estilos">
+        <h2>5. Estilos y Clases</h2>
+        <p class="description">Aplica estilos CSS y maneja clases de los elementos usando propiedades JavaScript.</p>
+        <button onclick="cambiarEstilo()">Cambiar Color</button>
+        <button onclick="agregarClase()">Agregar Clase</button>
+        <button onclick="eliminarClase()">Eliminar Clase</button>
+        <button onclick="alternarClase()">Alternar Clase</button>
+        <div id="outputEstilos" class="output">
+            <div id="estiloCaja">Caja para cambiar estilos</div>
+        </div>
+    </div>
+
+    <!-- Eventos -->
+    <div class="section" id="eventos">
+        <h2>6. Eventos</h2>
+        <p class="description">Añade o elimina un evento a un elemento para que responda a interacciones del usuario.</p>
+        <button onclick="agregarEvento()">Agregar Evento</button>
+        <button onclick="eliminarEvento()">Eliminar Evento</button>
+        <div id="outputEventos" class="output">
+            <button id="botonEvento">Clic en este botón</button>
+        </div>
+    </div>
+
+    <script>
+        // 1. Selección de Elementos
+        function seleccionPorId() {
+            let header = document.getElementById('header');
+            document.getElementById('outputSeleccion').textContent = 'Seleccionado elemento con ID "header": ' + header.textContent;
+        }
+
+        function seleccionPorClase() {
+            let items = document.getElementsByClassName('item');
+            document.getElementById('outputSeleccion').textContent = 'Seleccionados ' + items.length + ' elementos con clase "item"';
+        }
+
+        function seleccionPorEtiqueta() {
+            let paragraphs = document.getElementsByTagName('p');
+            document.getElementById('outputSeleccion').textContent = 'Seleccionados ' + paragraphs.length + ' elementos con etiqueta "p"';
+        }
+
+        function seleccionPorSelector() {
+            let main = document.querySelector('.main');
+            document.getElementById('outputSeleccion').textContent = 'Seleccionado primer elemento con selector ".main": ' + main.textContent;
+        }
+
+        function seleccionPorSelectorAll() {
+            let buttons = document.querySelectorAll('button');
+            document.getElementById('outputSeleccion').textContent = 'Seleccionados ' + buttons.length + ' elementos con selector "button"';
+        }
+
+        // 2. Manipulación de Contenido
+        function cambiarInnerHTML() {
+            let container = document.getElementById('outputContenido');
+            container.innerHTML = '<h2>Título dinámico</h2><p>Contenido cambiado con innerHTML</p>';
+        }
+
+        function cambiarTextContent() {
+            let paragraph = document.querySelector('#outputContenido p');
+            paragraph.textContent = 'Texto actualizado solo con textContent';
+        }
+
+        function cambiarInnerText() {
+            let paragraph = document.querySelector('#outputContenido p');
+            paragraph.innerText = 'Texto visible actualizado solo con innerText';
+        }
+
+        // 3. Creación y Modificación de Elementos
+        function crearElemento() {
+            let newDiv = document.createElement('div');
+            newDiv.textContent = 'Soy un nuevo div';
+            document.getElementById('outputCreacion').appendChild(newDiv);
+        }
+
+        function insertarElemento() {
+            let newDiv = document.createElement('div');
+            newDiv.textContent = 'Elemento insertado antes';
+            let referencia = document.getElementById('referencia');
+            document.getElementById('outputCreacion').insertBefore(newDiv, referencia);
+        }
+
+        function eliminarElemento() {
+            let container = document.getElementById('outputCreacion');
+            if (container.lastElementChild.id !== 'referencia') {
+                container.removeChild(container.lastElementChild);
+            }
+        }
+
+        function reemplazarElemento() {
+            let replacementDiv = document.createElement('div');
+            replacementDiv.textContent = 'Elemento reemplazado';
+            let referencia = document.getElementById('referencia');
+            document.getElementById('outputCreacion').replaceChild(replacementDiv, referencia);
+        }
+
+        // 4. Manipulación de Atributos
+        function mostrarAtributo() {
+            let enlace = document.getElementById('enlace');
+            document.getElementById('outputAtributos').textContent = 'Atributo href: ' + enlace.getAttribute('href');
+        }
+
+        function establecerAtributo() {
+            let enlace = document.getElementById('enlace');
+            enlace.setAttribute('target', '_blank');
+            document.getElementById('outputAtributos').textContent = 'Atributo target establecido a "_blank"';
+        }
+
+        function eliminarAtributo() {
+            let enlace = document.getElementById('enlace');
+            enlace.removeAttribute('target');
+            document.getElementById('outputAtributos').textContent = 'Atributo target eliminado';
+        }
+
+        function verificarAtributo() {
+            let enlace = document.getElementById('enlace');
+            let hasHref = enlace.hasAttribute('href');
+            document.getElementById('outputAtributos').textContent = '¿Tiene atributo href?: ' + hasHref;
+        }
+
+        // 5. Estilos y Clases
+        function cambiarEstilo() {
+            let box = document.getElementById('estiloCaja');
+            box.style.color = 'red';
+        }
+
+        function agregarClase() {
+            let box = document.getElementById('estiloCaja');
+            box.classList.add('highlight');
+        }
+
+        function eliminarClase() {
+            let box = document.getElementById('estiloCaja');
+            box.classList.remove('highlight');
+        }
+
+        function alternarClase() {
+            let box = document.getElementById('estiloCaja');
+            box.classList.toggle('active');
+        }
+
+        // 6. Eventos
+        function agregarEvento() {
+            let botonEvento = document.getElementById('botonEvento');
+            botonEvento.addEventListener('click', mostrarAlerta);
+        }
+
+        function eliminarEvento() {
+            let botonEvento = document.getElementById('botonEvento');
+            botonEvento.removeEventListener('click', mostrarAlerta);
+        }
+
+        function mostrarAlerta() {
+            alert('¡Botón clickeado!');
+        }
+    </script>
+</body>
+</html>

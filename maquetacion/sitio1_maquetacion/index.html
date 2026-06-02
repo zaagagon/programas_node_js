@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maqueta</title>
+    <style>
+
+        
+        
+        /*menor especificidad*/
+        h1{
+        
+            color: blue;
+        }
+        /*mayor especificidad*/
+        /*combina una clase y un h1*/
+
+        .container h1{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello</h1>
+    <div class="container">
+        <h1>hola</h1>
+        
+    </div>
+    
+    
+</body>
+</html>

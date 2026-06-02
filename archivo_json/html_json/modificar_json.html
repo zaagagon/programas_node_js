@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes, Notas y Materias</title>
+</head>
+<body>
+    <h1>Gestión de Estudiantes, Notas y Materias</h1>
+
+    <h2>Estudiantes</h2>
+    <ul id="lista-estudiantes"></ul>
+
+    <script>
+        // Objeto JSON con colecciones de estudiantes, notas y materias
+        var data = {
+            estudiantes: [
+                { id: 1, nombre: "Juan", edad: 45 },
+                { id: 2, nombre: "María", edad: 22 },
+                { id: 3, nombre: "Pedro", edad: 21 }
+            ]
+        };
+
+        // Función para mostrar los estudiantes en la lista
+        function mostrarEstudiantes() {
+            var listaEstudiantes = document.getElementById("lista-estudiantes");
+            listaEstudiantes.innerHTML = ""; // Limpiar la lista antes de volver a mostrar
+
+            data.estudiantes.forEach(function(estudiante) {
+                var li = document.createElement("li");
+
+                // Crear campos de entrada para editar la información del estudiante
+                var inputNombre = document.createElement("input");
+                inputNombre.type = "text";
+                inputNombre.value = estudiante.nombre;
+                inputNombre.addEventListener("input", function() {
+                    estudiante.nombre = inputNombre.value;
+                });
+
+                var inputEdad = document.createElement("input");
+                inputEdad.type = "number";
+                inputEdad.value = estudiante.edad;
+                inputEdad.addEventListener("input", function() {
+                    estudiante.edad = parseInt(inputEdad.value);
+                });
+
+                // Botón para eliminar el estudiante
+                var botonEliminar = document.createElement("button");
+                botonEliminar.textContent = "Eliminar";
+                botonEliminar.addEventListener("click", function() {
+                    data.estudiantes = data.estudiantes.filter(e => e.id !== estudiante.id);
+                    mostrarEstudiantes(); // Volver a mostrar la lista después de eliminar el estudiante
+                });
+
+                // Agregar los elementos al elemento de lista
+                li.textContent = "ID: " + estudiante.id + ", ";
+                li.appendChild(document.createTextNode("Nombre: "));
+                li.appendChild(inputNombre);
+                li.appendChild(document.createTextNode(", Edad: "));
+                li.appendChild(inputEdad);
+                li.appendChild(botonEliminar);
+                listaEstudiantes.appendChild(li);
+            });
+        }
+
+        // Llamar a la función para mostrar la información inicialmente
+        mostrarEstudiantes();
+    </script>
+</body>
+</html>

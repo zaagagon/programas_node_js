@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de getElementById</title>
+</head>
+<body>
+    <!-- Elemento donde mostraremos el mensaje -->
+    <h1 id="mensaje">Este es el mensaje original</h1>
+    <p id="parrafo" style="display:none">texto oculto con secretos **</p>
+    <p id="parrafo2" style="display: none;">cohistas variras **</p>
+
+    <!-- Botón para cambiar el mensaje -->
+    <button onclick="cambiarMensaje()">Haz clic para cambiar el mensaje</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+       alert("dfsdfsdff")
+        // Función para cambiar el mensaje
+        function cambiarMensaje() {
+            // Usar getElementById para seleccionar el elemento con id "mensaje"
+            const mensajeElemento = document.getElementById("mensaje");
+
+            // Cambiar el contenido de texto del elemento
+            mensajeElemento.textContent = "¡El mensaje ha sido cambiado!";
+        }
+        console.log(document.getElementById("parrafo").innerText);
+        console.log(document.getElementById("parrafo2").innerText);
+
+    </script>
+</body>
+</html>
