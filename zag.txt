@@ -1,0 +1,11 @@
+//archivo actualizado desde git hub
+Archivo creado zag, hola mundo!
+
+//other change since git hub
+
+//forever 
+revisar instalacion de forever
+$ npm install forever
+$ forever start server.js
+
+//archivo gitignore creado
